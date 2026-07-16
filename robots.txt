@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lewispaing.github.io/Wellmax-/sitemap.xml

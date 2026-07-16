@@ -47,6 +47,7 @@ if(!reduceMotion){
   renderParallax();
 
   if(matchMedia('(pointer:fine)').matches){
+    document.querySelectorAll('[data-parallax-img]').forEach(img=>{const frame=img.parentElement;frame.addEventListener('pointermove',e=>{const r=frame.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;img.style.transform=`scale(1.1) translate3d(${x*-14}px,${y*-14}px,0)`;});frame.addEventListener('pointerleave',()=>img.style.transform='scale(1.04)');});
     document.querySelectorAll('[data-cursor-depth]').forEach(el=>{
       el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5,d=Number(el.dataset.cursorDepth);el.style.transform=`rotate(2deg) translate3d(${x*d}px,${y*d}px,0) scale(1.015)`;});
       el.addEventListener('pointerleave',()=>el.style.transform='rotate(2deg) translate3d(0,0,0) scale(1)');
@@ -56,4 +57,9 @@ if(!reduceMotion){
       card.addEventListener('pointerleave',()=>card.style.transform='');
     });
   }
+}
+
+if(document.body.querySelector('.service-page')){
+  const serviceLinks=['brand-strategy','graphic-packaging','social-media','paid-media','website-design','copy-content'];
+  document.querySelectorAll('.service-page .service-list article').forEach((item,i)=>{item.tabIndex=0;item.setAttribute('role','link');item.addEventListener('click',()=>location.href=`article.html?topic=${serviceLinks[i]}`);item.addEventListener('keydown',e=>{if(e.key==='Enter')location.href=`article.html?topic=${serviceLinks[i]}`;});});
 }
