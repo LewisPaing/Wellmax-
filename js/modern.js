@@ -9,6 +9,17 @@ if('IntersectionObserver' in window){
 const year=document.querySelector('#year');
 if(year) year.textContent=new Date().getFullYear();
 
+const counters=document.querySelectorAll('[data-count]');
+if(counters.length){
+  const countObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{
+    if(!entry.isIntersecting)return;
+    const el=entry.target,target=Number(el.dataset.count),suffix=el.dataset.suffix||'',start=performance.now(),duration=1400;
+    const tick=now=>{const progress=Math.min((now-start)/duration,1),eased=1-Math.pow(1-progress,3);el.textContent=Math.round(target*eased)+suffix;if(progress<1)requestAnimationFrame(tick);};
+    requestAnimationFrame(tick);countObserver.unobserve(el);
+  }),{threshold:.65});
+  counters.forEach(counter=>countObserver.observe(counter));
+}
+
 const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(!reduceMotion){
   const parallax=[...document.querySelectorAll('[data-parallax]')];
