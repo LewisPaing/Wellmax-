@@ -1,0 +1,52 @@
+h1.splitting {
+    color: saturate(lighten(#182952, 55%), 60%);
+
+    .char {
+        transition: transform .3s cubic-bezier(.3, 0, .3, 1), opacity .3s linear;
+        transition-delay: calc(20ms * var(--char-index));
+
+    }
+
+    &[data-scroll="out"] .char {
+        opacity: 0.1;
+        transform: translateY(.25em);
+    }
+}
+
+.page>h1 {
+    color: #9e34ff;
+    font-weight: bold;
+    margin-top: 4rem;
+}
+
+.sub-header {
+    font-size: 1.7rem;
+}
+
+.number {
+    color: black;
+    font-weight: bold;
+}
+
+/* ---------------------------------- */
+
+// html,
+// body {
+//     background: #182952;
+// }
+
+// body {
+//     color: rgba(255, 255, 255, .2);
+// }
+
+.page {
+    max-width: 50em;
+    margin: auto;
+    overflow: hidden;
+}
+
+.page>div>img {
+    max-width: 250px;
+    width: calc(100% - 50px);
+    margin: auto;
+}
