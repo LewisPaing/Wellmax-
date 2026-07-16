@@ -1,4 +1,9 @@
 const toggle=document.querySelector('.menu-toggle');
+window.dataLayer=window.dataLayer||[];
+window.gtag=function(){dataLayer.push(arguments);};
+gtag('js',new Date());
+gtag('config','G-5L40SB6MB8');
+const analytics=document.createElement('script');analytics.async=true;analytics.src='https://www.googletagmanager.com/gtag/js?id=G-5L40SB6MB8';document.head.appendChild(analytics);
 const nav=document.querySelector('#site-nav');
 toggle?.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')==='true';toggle.setAttribute('aria-expanded',String(!open));nav.classList.toggle('open');});
 nav?.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');}));
@@ -8,6 +13,14 @@ if('IntersectionObserver' in window){
 }else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));}
 const year=document.querySelector('#year');
 if(year) year.textContent=new Date().getFullYear();
+
+const filterButtons=document.querySelectorAll('[data-filter]');
+const portfolioItems=document.querySelectorAll('[data-category]');
+filterButtons.forEach(button=>button.addEventListener('click',()=>{
+  filterButtons.forEach(item=>item.classList.remove('active'));button.classList.add('active');
+  const filter=button.dataset.filter;
+  portfolioItems.forEach(item=>{item.hidden=filter!=='all'&&item.dataset.category!==filter;});
+}));
 
 const counters=document.querySelectorAll('[data-count]');
 if(counters.length){
