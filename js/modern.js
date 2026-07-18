@@ -71,3 +71,16 @@ if(document.body.querySelector('.service-page')){
   const serviceLinks=['brand-strategy','graphic-packaging','social-media','paid-media','website-design','copy-content'];
   document.querySelectorAll('.service-page .service-list article').forEach((item,i)=>{item.tabIndex=0;item.setAttribute('role','link');item.addEventListener('click',()=>location.href=`article.html?topic=${serviceLinks[i]}`);item.addEventListener('keydown',e=>{if(e.key==='Enter')location.href=`article.html?topic=${serviceLinks[i]}`;});});
 }
+
+const posterLightbox=document.querySelector('#poster-lightbox');
+if(posterLightbox){
+  const preview=posterLightbox.querySelector('img');
+  const close=posterLightbox.querySelector('button');
+  document.querySelectorAll('.poster-mockup').forEach(poster=>{
+    const open=()=>{const image=poster.querySelector('img');preview.src=image.src;preview.alt=image.alt;posterLightbox.showModal();};
+    poster.addEventListener('click',open);
+    poster.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();open();}});
+  });
+  close.addEventListener('click',()=>posterLightbox.close());
+  posterLightbox.addEventListener('click',event=>{if(event.target===posterLightbox)posterLightbox.close();});
+}
