@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://wellmaxagency.com/</loc><lastmod>2026-07-18</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://wellmaxagency.com/</loc><lastmod>2026-07-18</lastmod><priority>1.0</priority></url>
   <url><loc>https://wellmaxagency.com/about.html</loc><lastmod>2026-07-18</lastmod></url>
   <url><loc>https://wellmaxagency.com/service.html</loc><lastmod>2026-07-18</lastmod></url>
   <url><loc>https://wellmaxagency.com/contact.html</loc><lastmod>2026-07-18</lastmod></url>
   <url><loc>https://wellmaxagency.com/blogs.html</loc><lastmod>2026-07-18</lastmod></url>
-  <url><loc>https://wellmaxagency.com/case-study.html?project=thankai</loc></url>
-  <url><loc>https://wellmaxagency.com/case-study.html?project=sway</loc></url>
-  <url><loc>https://wellmaxagency.com/case-study.html?project=restaurant</loc></url>
-  <url><loc>https://wellmaxagency.com/case-study.html?project=hyundai</loc></url>
-  <url><loc>https://wellmaxagency.com/case-study.html?project=onew</loc></url>
-  <url><loc>https://wellmaxagency.com/case-study.html?project=taylor</loc></url>
-  <url><loc>https://wellmaxagency.com/article.html?topic=brand-strategy</loc></url>
-  <url><loc>https://wellmaxagency.com/article.html?topic=graphic-packaging</loc></url>
-  <url><loc>https://wellmaxagency.com/article.html?topic=social-media</loc></url>
-  <url><loc>https://wellmaxagency.com/article.html?topic=paid-media</loc></url>
-  <url><loc>https://wellmaxagency.com/article.html?topic=website-design</loc></url>
-  <url><loc>https://wellmaxagency.com/article.html?topic=copy-content</loc></url>
+  <url><loc>https://wellmaxagency.com/insight-brand-strategy.html</loc></url>
+  <url><loc>https://wellmaxagency.com/insight-graphic-packaging.html</loc></url>
+  <url><loc>https://wellmaxagency.com/insight-social-media.html</loc></url>
+  <url><loc>https://wellmaxagency.com/insight-paid-media.html</loc></url>
+  <url><loc>https://wellmaxagency.com/insight-website-design.html</loc></url>
+  <url><loc>https://wellmaxagency.com/insight-copy-content.html</loc></url>
+  <url><loc>https://wellmaxagency.com/work-thankai.html</loc></url>
+  <url><loc>https://wellmaxagency.com/work-sway.html</loc></url>
+  <url><loc>https://wellmaxagency.com/work-restaurant.html</loc></url>
+  <url><loc>https://wellmaxagency.com/work-hyundai.html</loc></url>
+  <url><loc>https://wellmaxagency.com/work-onew.html</loc></url>
+  <url><loc>https://wellmaxagency.com/work-taylor.html</loc></url>
 </urlset>

@@ -85,7 +85,7 @@ if(!reduceMotion){
 
 if(document.body.querySelector('.service-page')){
   const serviceLinks=['brand-strategy','graphic-packaging','social-media','paid-media','website-design','copy-content'];
-  document.querySelectorAll('.service-page .service-list article').forEach((item,i)=>{item.tabIndex=0;item.setAttribute('role','link');item.addEventListener('click',()=>location.href=`article.html?topic=${serviceLinks[i]}`);item.addEventListener('keydown',e=>{if(e.key==='Enter')location.href=`article.html?topic=${serviceLinks[i]}`;});});
+  document.querySelectorAll('.service-page .service-list article').forEach((item,i)=>{item.tabIndex=0;item.setAttribute('role','link');item.addEventListener('click',()=>location.href=`insight-.html`);item.addEventListener('keydown',e=>{if(e.key==='Enter')location.href=`insight-.html`;});});
 }
 
 const posterLightbox=document.querySelector('#poster-lightbox');
