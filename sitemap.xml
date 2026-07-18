@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://wellmaxagency.com/</loc><lastmod>2026-07-16</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://wellmaxagency.com/about.html</loc><lastmod>2026-07-16</lastmod></url>
-  <url><loc>https://wellmaxagency.com/service.html</loc><lastmod>2026-07-16</lastmod></url>
-  <url><loc>https://wellmaxagency.com/contact.html</loc><lastmod>2026-07-16</lastmod></url>
-  <url><loc>https://wellmaxagency.com/blogs.html</loc><lastmod>2026-07-16</lastmod></url>
+  <url><loc>https://wellmaxagency.com/</loc><lastmod>2026-07-18</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://wellmaxagency.com/about.html</loc><lastmod>2026-07-18</lastmod></url>
+  <url><loc>https://wellmaxagency.com/service.html</loc><lastmod>2026-07-18</lastmod></url>
+  <url><loc>https://wellmaxagency.com/contact.html</loc><lastmod>2026-07-18</lastmod></url>
+  <url><loc>https://wellmaxagency.com/blogs.html</loc><lastmod>2026-07-18</lastmod></url>
+  <url><loc>https://wellmaxagency.com/case-study.html?project=thankai</loc></url>
+  <url><loc>https://wellmaxagency.com/case-study.html?project=sway</loc></url>
+  <url><loc>https://wellmaxagency.com/case-study.html?project=restaurant</loc></url>
+  <url><loc>https://wellmaxagency.com/case-study.html?project=hyundai</loc></url>
+  <url><loc>https://wellmaxagency.com/case-study.html?project=onew</loc></url>
+  <url><loc>https://wellmaxagency.com/case-study.html?project=taylor</loc></url>
   <url><loc>https://wellmaxagency.com/article.html?topic=brand-strategy</loc></url>
   <url><loc>https://wellmaxagency.com/article.html?topic=graphic-packaging</loc></url>
   <url><loc>https://wellmaxagency.com/article.html?topic=social-media</loc></url>
