@@ -6,6 +6,21 @@ gtag('config','G-BZS092V571');
 const analytics=document.createElement('script');analytics.async=true;analytics.src='https://www.googletagmanager.com/gtag/js?id=G-BZS092V571';document.head.appendChild(analytics);
 const nav=document.querySelector('#site-nav');
 document.querySelectorAll('.social-track').forEach(track=>{const sets=track.querySelectorAll('.social-set');if(sets.length>1&&!sets[1].children.length)sets[1].innerHTML=sets[0].innerHTML;});
+const posterWall=document.querySelector('.poster-wall');
+if(posterWall){
+  const slides=[...posterWall.querySelectorAll('.poster-mockup')],thumbRail=document.querySelector('.poster-gallery-thumbs'),progress=document.querySelector('.poster-gallery-progress strong');
+  let active=0,timer,startX=0;
+  slides.forEach((slide,i)=>{const button=document.createElement('button');button.type='button';button.className='poster-gallery-thumb';button.setAttribute('role','tab');button.setAttribute('aria-label',`Show poster ${i+1}`);button.innerHTML=`<img src="${slide.querySelector('img').src}" alt="">`;button.addEventListener('click',()=>show(i,true));thumbRail?.appendChild(button);});
+  const thumbs=[...document.querySelectorAll('.poster-gallery-thumb')];
+  const show=(index,user=false)=>{active=(index+slides.length)%slides.length;slides.forEach((slide,i)=>{slide.classList.toggle('is-active',i===active);slide.classList.toggle('is-prev',i===(active-1+slides.length)%slides.length);slide.classList.toggle('is-next',i===(active+1)%slides.length);});thumbs.forEach((thumb,i)=>{thumb.classList.toggle('is-active',i===active);thumb.setAttribute('aria-selected',String(i===active));});if(progress)progress.textContent=String(active+1).padStart(2,'0');if(user)restart();};
+  const restart=()=>{clearInterval(timer);timer=setInterval(()=>show(active+1),4200);};
+  document.querySelector('.poster-gallery-prev')?.addEventListener('click',()=>show(active-1,true));
+  document.querySelector('.poster-gallery-next')?.addEventListener('click',()=>show(active+1,true));
+  posterWall.addEventListener('pointerdown',e=>startX=e.clientX);posterWall.addEventListener('pointerup',e=>{const d=e.clientX-startX;if(Math.abs(d)>55)show(active+(d<0?1:-1),true);});
+  posterWall.addEventListener('mouseenter',()=>clearInterval(timer));posterWall.addEventListener('mouseleave',restart);
+  posterWall.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')show(active-1,true);if(e.key==='ArrowRight')show(active+1,true);});
+  show(0);restart();
+}
 toggle?.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')==='true';toggle.setAttribute('aria-expanded',String(!open));nav.classList.toggle('open');});
 nav?.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');}));
 if('IntersectionObserver' in window){
