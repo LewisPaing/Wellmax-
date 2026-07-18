@@ -1,0 +1,12 @@
+@import url("social-showcase-v18.css");
+/* Compact poster wall: four complete panels with consistent gutters. */
+@media(min-width:761px){
+  .poster-wall{min-height:clamp(650px,64vw,960px)}
+  .poster-a,.poster-b,.poster-c,.poster-d{width:21%;top:5%}
+  .poster-a{left:2%;transform:rotate(-3deg) translateZ(20px)}
+  .poster-b{left:27%;transform:rotate(2deg) translateZ(70px)}
+  .poster-c{left:52%;transform:rotate(-2deg) translateZ(40px)}
+  .poster-d{left:77%;right:auto;transform:rotate(2deg) translateZ(55px)}
+  .poster-e,.poster-f,.poster-g{width:20%;top:50%}
+  .poster-e{left:15%}.poster-f{left:40%}.poster-g{right:15%}
+}
