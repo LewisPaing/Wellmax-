@@ -1,0 +1,12 @@
+@media(min-width:901px){
+  .site-header nav{position:relative;isolation:isolate;padding:7px;border:1px solid rgba(255,255,255,.62);border-radius:999px;background:linear-gradient(135deg,rgba(255,255,255,.46),rgba(255,255,255,.16));-webkit-backdrop-filter:blur(24px) saturate(1.7);backdrop-filter:blur(24px) saturate(1.7);box-shadow:inset 0 1px 0 rgba(255,255,255,.92),inset 0 -1px 0 rgba(255,255,255,.28),0 16px 42px rgba(47,21,82,.14),0 2px 8px rgba(48,15,91,.08);gap:3px!important;overflow:hidden}
+  .site-header nav:before{content:"";position:absolute;z-index:-1;inset:1px 8% auto;height:48%;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.62),rgba(255,255,255,0));filter:blur(1px);pointer-events:none}
+  .site-header nav:after{content:"";position:absolute;z-index:-2;width:130px;height:90px;left:var(--glass-x,45%);top:var(--glass-y,20%);translate:-50% -50%;border-radius:50%;background:radial-gradient(circle,rgba(195,157,255,.28),transparent 68%);filter:blur(14px);transition:left .18s ease,top .18s ease;pointer-events:none}
+  .site-header nav>a:not(.nav-cta){padding:12px 18px;border:1px solid transparent;border-radius:999px;transition:transform .24s ease,color .24s ease,background .24s ease,border-color .24s ease,box-shadow .24s ease;text-shadow:0 1px 0 rgba(255,255,255,.5)}
+  .site-header nav>a:not(.nav-cta):after{display:none!important}
+  .site-header nav>a:not(.nav-cta):hover,.site-header nav>a:not(.nav-cta).active{transform:translateY(-1px);color:#5420aa;background:linear-gradient(135deg,rgba(255,255,255,.68),rgba(214,185,255,.28));border-color:rgba(255,255,255,.74);box-shadow:inset 0 1px 0 #fff,inset 0 -1px 0 rgba(117,62,200,.10),0 8px 18px rgba(73,28,139,.13)}
+  .site-header nav .nav-cta{margin-left:4px;padding:12px 19px;background:linear-gradient(135deg,rgba(92,42,174,.84),rgba(19,9,34,.82));border:1px solid rgba(255,255,255,.38);box-shadow:inset 0 1px 0 rgba(255,255,255,.36),0 8px 19px rgba(42,12,84,.2)}
+  .site-header.scrolled{background:transparent!important;border-bottom:0!important;backdrop-filter:none!important}
+}
+@media(max-width:900px){.site-header nav{border-radius:0;border:0;box-shadow:none;background:rgba(247,243,251,.86);-webkit-backdrop-filter:blur(28px) saturate(1.5);backdrop-filter:blur(28px) saturate(1.5)}.site-header nav>a:not(.nav-cta){padding:10px 20px;border-radius:999px}.site-header nav>a.active{color:#7b3fe4;background:rgba(123,63,228,.08)}}
+@media(prefers-reduced-motion:reduce){.site-header nav,.site-header nav a{transition:none!important}}
