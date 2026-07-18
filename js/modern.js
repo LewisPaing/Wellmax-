@@ -5,6 +5,7 @@ gtag('js',new Date());
 gtag('config','G-BZS092V571');
 const analytics=document.createElement('script');analytics.async=true;analytics.src='https://www.googletagmanager.com/gtag/js?id=G-BZS092V571';document.head.appendChild(analytics);
 const nav=document.querySelector('#site-nav');
+document.querySelectorAll('.social-track').forEach(track=>{const sets=track.querySelectorAll('.social-set');if(sets.length>1&&!sets[1].children.length)sets[1].innerHTML=sets[0].innerHTML;});
 toggle?.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')==='true';toggle.setAttribute('aria-expanded',String(!open));nav.classList.toggle('open');});
 nav?.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');}));
 if('IntersectionObserver' in window){
@@ -76,7 +77,7 @@ const posterLightbox=document.querySelector('#poster-lightbox');
 if(posterLightbox){
   const preview=posterLightbox.querySelector('img');
   const close=posterLightbox.querySelector('button');
-  document.querySelectorAll('.poster-mockup').forEach(poster=>{
+  document.querySelectorAll('.poster-mockup,.social-card').forEach(poster=>{
     const open=()=>{const image=poster.querySelector('img');preview.src=image.src;preview.alt=image.alt;posterLightbox.showModal();};
     poster.addEventListener('click',open);
     poster.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();open();}});
