@@ -1,0 +1,14 @@
+.about-page{background:#f7f3fb}
+.about-flow{position:relative;isolation:isolate;overflow:clip;background:radial-gradient(circle at 73% 28%,rgba(167,111,255,.18),transparent 25%),radial-gradient(circle at 45% 67%,rgba(123,63,228,.12),transparent 28%),linear-gradient(150deg,#faf8fc 0,#f2ecf9 48%,#faf8fc 100%)}
+.about-flow:before{content:"";position:absolute;inset:0;z-index:-2;opacity:.24;background-image:linear-gradient(rgba(123,63,228,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(123,63,228,.08) 1px,transparent 1px);background-size:52px 52px;mask-image:linear-gradient(to bottom,#000 20%,transparent 92%)}
+.about-flow .page-hero{min-height:105vh;overflow:visible;padding-bottom:190px;background:transparent;z-index:3}
+.about-flow .about-scene{z-index:5;min-height:650px;align-self:center}
+.about-flow .story-dimensional{margin-top:-150px;padding-top:250px;padding-bottom:190px;background:transparent!important;overflow:visible;z-index:2}
+.about-flow .story-dimensional:before{opacity:.16}
+.about-flow .story-glow{width:620px;height:620px;left:28%;top:8%}
+.about-flow .logo-sphere{z-index:7}
+.about-flow .orbit,.about-flow .float-tile{z-index:6}
+.about-flow .story-abstract{z-index:1}
+.about-flow .statement-grid,.about-flow .story-dimensional>.section-kicker{z-index:8}
+@media(max-width:900px){.about-flow .page-hero{min-height:auto;padding-bottom:150px}.about-flow .about-scene{min-height:520px}.about-flow .story-dimensional{margin-top:-90px;padding-top:170px}}
+@media(max-width:600px){.about-flow{overflow:hidden}.about-flow .page-hero{padding-bottom:110px}.about-flow .about-scene{min-height:400px}.about-flow .story-dimensional{margin-top:-50px;padding-top:125px;padding-bottom:120px}.about-flow:before{background-size:36px 36px}}
