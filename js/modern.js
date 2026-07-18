@@ -62,6 +62,7 @@ if(!reduceMotion){
       card?.addEventListener('pointerleave',()=>icon.style.transform='');
     });
     document.querySelectorAll('.contact-inner').forEach(section=>{const title=section.querySelector('h2');if(!title)return;section.addEventListener('pointermove',e=>{const r=section.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;title.style.transform=`perspective(1000px) rotateX(${-y*5}deg) rotateY(${x*7}deg) translate3d(${x*12}px,${y*8}px,24px)`;});section.addEventListener('pointerleave',()=>title.style.transform='');});
+    document.querySelectorAll('.story-dimensional').forEach(section=>{const shapes=section.querySelectorAll('[data-story-depth]');section.addEventListener('pointermove',e=>{const r=section.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;shapes.forEach(shape=>{const depth=Number(shape.dataset.storyDepth);shape.style.translate=`${x*depth}px ${y*depth}px`;});});section.addEventListener('pointerleave',()=>shapes.forEach(shape=>shape.style.translate=''));});
   }
 }
 
