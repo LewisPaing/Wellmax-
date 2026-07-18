@@ -1,0 +1,14 @@
+.about-scene .logo-sphere{position:relative;width:290px;height:290px;overflow:visible;color:transparent!important;background:radial-gradient(circle at 30% 22%,#e7d8ff 0,#b784ff 13%,#8241e8 42%,#5b1dbb 70%,#2e075f 100%)!important;border:1px solid rgba(255,255,255,.68);box-shadow:inset 16px 14px 24px rgba(255,255,255,.48),inset -28px -35px 45px rgba(31,0,72,.58),0 45px 85px rgba(83,24,177,.42),0 0 0 12px rgba(139,79,235,.08);transform-style:preserve-3d;isolation:isolate}
+.logo-sphere:before{content:"";position:absolute;inset:12px;border-radius:50%;border:1px solid rgba(255,255,255,.24);box-shadow:inset 0 0 30px rgba(255,255,255,.12);z-index:1}
+.logo-sphere:after{content:"";position:absolute;width:68%;height:24%;left:16%;bottom:-14%;border-radius:50%;background:radial-gradient(ellipse,rgba(47,4,100,.42),transparent 68%);filter:blur(12px);z-index:-2}
+.logo-sphere .logo-extrude,.logo-sphere .logo-face{position:absolute;inset:15%;display:grid;place-items:center;transform-style:preserve-3d;z-index:3}
+.logo-sphere .logo-extrude{transform:translate3d(10px,13px,16px);opacity:.72;filter:brightness(0) saturate(100%) invert(12%) sepia(91%) saturate(3118%) hue-rotate(265deg) brightness(70%)}
+.logo-sphere .logo-face{transform:translate3d(-2px,-3px,42px)}
+.logo-sphere img{width:100%;height:100%;object-fit:contain;background:none!important}
+.logo-sphere .logo-face img{filter:brightness(0) invert(1) drop-shadow(0 3px 0 #d9c0ff) drop-shadow(0 7px 0 #9c64ee) drop-shadow(0 17px 15px rgba(28,0,67,.42));opacity:1}
+.logo-sphere .logo-shine{position:absolute;z-index:5;width:42%;height:18%;left:18%;top:10%;border-radius:50%;background:linear-gradient(180deg,rgba(255,255,255,.62),rgba(255,255,255,0));filter:blur(5px);transform:rotate(-16deg);pointer-events:none}
+.logo-sphere:hover .logo-face{transform:translate3d(-5px,-8px,58px) scale(1.035)}.logo-sphere .logo-face,.logo-sphere .logo-extrude{transition:transform .35s ease}
+.about-scene:before{content:"";position:absolute;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(154,96,242,.19),transparent 67%);filter:blur(8px);animation:logo-aura 5s ease-in-out infinite;pointer-events:none}
+@keyframes logo-aura{50%{transform:scale(1.14);opacity:.65}}
+@media(max-width:600px){.about-scene .logo-sphere{width:225px;height:225px}.logo-sphere .logo-extrude,.logo-sphere .logo-face{inset:17%}.about-scene:before{width:300px;height:300px}}
+@media(prefers-reduced-motion:reduce){.about-scene:before{animation:none}.logo-sphere .logo-face,.logo-sphere .logo-extrude{transition:none}}
