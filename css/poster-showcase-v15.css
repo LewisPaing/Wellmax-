@@ -1,0 +1,43 @@
+.poster-showcase{margin-top:clamp(100px,12vw,180px);padding-top:38px;border-top:1px solid rgba(255,255,255,.32)}
+.poster-showcase-copy{display:grid;grid-template-columns:1.15fr 1fr;gap:7vw;align-items:end;margin-bottom:48px}
+.poster-showcase-copy .section-kicker{grid-column:1/-1;margin:0;color:#d9ff43}
+.poster-showcase-copy h3{margin:0;font-size:clamp(38px,5vw,72px);line-height:1;letter-spacing:-.055em}
+.poster-showcase-copy>p:last-child{margin:0;max-width:480px;color:#aaaab0;font-size:18px;line-height:1.65}
+.poster-wall{position:relative;min-height:clamp(780px,92vw,1320px);width:100vw;margin-left:calc(50% - 50vw);overflow:hidden;perspective:1500px;background:linear-gradient(145deg,#ece9e4 0%,#fff 48%,#ddd7d0 100%);border-block:1px solid #fff;box-shadow:inset 0 1px 0 #fff,0 35px 80px rgba(0,0,0,.28)}
+.poster-wall:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px),linear-gradient(rgba(0,0,0,.035) 1px,transparent 1px);background-size:90px 90px;mask-image:linear-gradient(to bottom,#0008,transparent 88%)}
+.poster-wall:after{content:"";position:absolute;left:-5%;right:-5%;bottom:-3%;height:18%;background:linear-gradient(#bdb6ad,#eae6e1);transform:rotateX(64deg);transform-origin:bottom;box-shadow:0 -25px 45px rgba(32,22,18,.16)}
+.poster-glow{position:absolute;width:58%;height:58%;left:21%;top:16%;background:#8a4bff26;filter:blur(90px);border-radius:50%}
+.poster-mockup{position:absolute;margin:0;z-index:2;filter:drop-shadow(0 28px 28px rgba(23,15,12,.28));transition:filter .35s ease}
+.poster-frame{position:relative;padding:clamp(7px,.8vw,13px);background:linear-gradient(145deg,#191919,#555 42%,#111 72%);border:1px solid #777;border-radius:3px;box-shadow:inset 0 0 0 2px #090909,inset 0 0 0 4px #888;transform-style:preserve-3d}
+.poster-frame:after{content:"";position:absolute;inset:8px;background:linear-gradient(115deg,rgba(255,255,255,.17),transparent 24%,transparent 72%,rgba(255,255,255,.08));pointer-events:none}
+.poster-frame img{width:100%;height:100%;display:block;object-fit:cover;aspect-ratio:2/3}
+.poster-mockup:hover{z-index:10;filter:drop-shadow(0 42px 42px rgba(66,30,8,.34))}
+.poster-mockup:hover .poster-frame{transform:translateZ(50px) scale(1.025)}
+.poster-a{width:22%;left:4%;top:8%;transform:rotate(-6deg) translateZ(10px)}
+.poster-b{width:20%;left:29%;top:4%;transform:rotate(3deg) translateZ(80px)}
+.poster-c{width:21%;left:54%;top:9%;transform:rotate(-2deg) translateZ(35px)}
+.poster-d{width:19%;right:3%;top:3%;transform:rotate(5deg) translateZ(60px)}
+.poster-e{width:21%;left:12%;top:53%;transform:rotate(4deg) translateZ(55px)}
+.poster-f{width:20%;left:40%;top:49%;transform:rotate(-4deg) translateZ(95px)}
+.poster-g{width:22%;right:9%;top:52%;transform:rotate(3deg) translateZ(25px)}
+
+@media(max-width:760px){.poster-showcase-copy{display:block}
+.poster-showcase-copy h3{margin:12px 0 20px}
+.poster-wall{min-height:1450px}
+.poster-mockup{width:42%}
+.poster-a{left:5%;top:4%}
+.poster-b{left:53%;top:2%}
+.poster-c{left:7%;top:27%}
+.poster-d{right:4%;top:25%}
+.poster-e{left:5%;top:50%}
+.poster-f{left:53%;top:48%}
+.poster-g{right:29%;top:72%}
+}
+
+@media(prefers-reduced-motion:no-preference){.poster-a,.poster-d,.poster-f{animation:poster-drift-a 7s ease-in-out infinite alternate}
+.poster-b,.poster-c,.poster-e,.poster-g{animation:poster-drift-b 8s ease-in-out infinite alternate}
+@keyframes poster-drift-a{to{translate:0 -14px}
+}
+@keyframes poster-drift-b{to{translate:0 12px}
+}
+}
