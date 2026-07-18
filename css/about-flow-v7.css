@@ -1,0 +1,7 @@
+.about-flow .page-hero{min-height:88vh!important;padding-bottom:25px!important}
+.about-flow .about-scene{min-height:560px!important}
+.about-flow .story-dimensional{margin-top:-145px!important;padding-top:145px!important;padding-bottom:145px!important}
+.about-flow .story-glow{top:-2%!important}
+@media(max-width:1100px){.about-flow .page-hero{min-height:82vh!important}.about-flow .story-dimensional{margin-top:-110px!important;padding-top:125px!important}}
+@media(max-width:900px){.about-flow .page-hero{min-height:auto!important;padding-bottom:45px!important}.about-flow .about-scene{min-height:460px!important}.about-flow .story-dimensional{margin-top:-70px!important;padding-top:105px!important}}
+@media(max-width:600px){.about-flow .page-hero{padding-bottom:20px!important}.about-flow .about-scene{min-height:370px!important}.about-flow .story-dimensional{margin-top:-35px!important;padding-top:80px!important;padding-bottom:100px!important}}
