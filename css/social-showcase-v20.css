@@ -1,0 +1,9 @@
+@import url("social-showcase-v19.css");
+/* More restrained poster scale with a compact, balanced composition. */
+@media(min-width:761px){
+  .poster-wall{min-height:clamp(600px,58vw,860px)}
+  .poster-a,.poster-b,.poster-c,.poster-d{width:17.5%;top:7%}
+  .poster-a{left:3.5%}.poster-b{left:29.5%}.poster-c{left:55.5%}.poster-d{left:79%;right:auto}
+  .poster-e,.poster-f,.poster-g{width:17%;top:49%}
+  .poster-e{left:17%}.poster-f{left:41.5%}.poster-g{right:17%}
+}
