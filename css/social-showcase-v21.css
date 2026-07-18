@@ -1,11 +1,11 @@
 @import url("social-showcase-v20.css");
 /* Editorial campaign spotlight */
 @media(min-width:761px){
-  .poster-wall{min-height:clamp(650px,67vw,940px);overflow:hidden;background:radial-gradient(circle at 50% 45%,rgba(141,74,255,.46),transparent 31%),linear-gradient(145deg,#100a19,#25103f 54%,#110a1b)}
+  .poster-wall{min-height:clamp(560px,52vw,760px);overflow:hidden;background:radial-gradient(circle at 50% 45%,rgba(141,74,255,.46),transparent 31%),linear-gradient(145deg,#100a19,#25103f 54%,#110a1b)}
   .poster-wall:before{width:46vw;height:46vw;left:27vw;top:10%;opacity:.34;border-width:2px;transform:rotateX(68deg) rotateZ(-12deg)}
   .poster-wall:after{right:8%;top:12%;scale:.55;opacity:.55}
   .poster-glow{width:32vw;height:32vw;left:34%;top:27%;opacity:.24;filter:blur(12px)}
-  .poster-mockup,.poster-a,.poster-b,.poster-c,.poster-d,.poster-e,.poster-f,.poster-g{width:clamp(260px,25vw,410px);left:50%;right:auto;top:50%;opacity:0;pointer-events:none;z-index:1;filter:drop-shadow(0 24px 30px rgba(0,0,0,.34));transform:translate(-50%,-50%) scale(.78);transition:transform .62s cubic-bezier(.2,.75,.2,1),opacity .5s ease}
+  .poster-mockup,.poster-a,.poster-b,.poster-c,.poster-d,.poster-e,.poster-f,.poster-g{width:clamp(240px,22vw,350px);left:50%;right:auto;top:48%;opacity:0;pointer-events:none;z-index:1;filter:drop-shadow(0 24px 30px rgba(0,0,0,.34));transform:translate(-50%,-50%) scale(.78);transition:transform .62s cubic-bezier(.2,.75,.2,1),opacity .5s ease}
   .poster-mockup.is-active{opacity:1;pointer-events:auto;z-index:5;transform:translate(-50%,-50%) scale(1)}
   .poster-mockup.is-prev{opacity:.42;z-index:2;transform:translate(-122%,-50%) scale(.72)}
   .poster-mockup.is-next{opacity:.42;z-index:2;transform:translate(22%,-50%) scale(.72)}
