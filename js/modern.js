@@ -61,10 +61,28 @@ if(counters.length){
 const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(!reduceMotion){
   const parallax=[...document.querySelectorAll('[data-parallax]')];
+  const smokeScene=document.querySelector('[data-smoke-parallax]');
   let ticking=false;
   const renderParallax=()=>{
     const y=window.scrollY;
     parallax.forEach(el=>{const speed=Number(el.dataset.parallax)||0;el.style.translate=`0 ${y*speed}px`;});
+    if(smokeScene){
+      const hero=smokeScene.closest('.hero'),rect=hero.getBoundingClientRect();
+      const progress=Math.max(-.2,Math.min(1.15,-rect.top/Math.max(innerHeight,1)));
+      smokeScene.style.setProperty('--smoke-y',`${progress*105}px`);
+      smokeScene.style.setProperty('--smoke-shift',`${progress*-72}px`);
+      smokeScene.style.setProperty('--smoke-rotate',`${progress*2.2}deg`);
+      smokeScene.style.setProperty('--smoke-y-reverse',`${progress*-47}px`);
+      smokeScene.style.setProperty('--smoke-shift-reverse',`${progress*97}px`);
+      smokeScene.style.setProperty('--ring-one-x',`${progress*-40}px`);
+      smokeScene.style.setProperty('--ring-one-y',`${progress*-37}px`);
+      smokeScene.style.setProperty('--ring-two-x',`${progress*25}px`);
+      smokeScene.style.setProperty('--ring-two-y',`${progress*25}px`);
+      smokeScene.style.setProperty('--spark-one-x',`${progress*36}px`);
+      smokeScene.style.setProperty('--spark-one-y',`${progress*-68}px`);
+      smokeScene.style.setProperty('--spark-two-x',`${progress*-54}px`);
+      smokeScene.style.setProperty('--spark-two-y',`${progress*58}px`);
+    }
     document.querySelector('.site-header')?.classList.toggle('scrolled',y>80);
     ticking=false;
   };
