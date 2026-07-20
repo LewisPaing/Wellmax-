@@ -5,6 +5,15 @@ gtag('js',new Date());
 gtag('config','G-BZS092V571');
 const analytics=document.createElement('script');analytics.async=true;analytics.src='https://www.googletagmanager.com/gtag/js?id=G-BZS092V571';document.head.appendChild(analytics);
 const nav=document.querySelector('#site-nav');
+if(nav&&!nav.querySelector('[data-home-link]')){
+  const home=document.createElement('a');
+  home.href='index.html';
+  home.textContent='Home';
+  home.dataset.homeLink='';
+  const path=location.pathname.replace(/\/+$/,'');
+  if(!path||path.endsWith('/index.html'))home.classList.add('active');
+  nav.prepend(home);
+}
 document.querySelectorAll('.social-track').forEach(track=>{const sets=track.querySelectorAll('.social-set');if(sets.length>1&&!sets[1].children.length)sets[1].innerHTML=sets[0].innerHTML;});
 const posterWall=document.querySelector('.poster-wall');
 if(posterWall){
