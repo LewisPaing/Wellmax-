@@ -16,7 +16,7 @@
     <div class="account"><span class="avatar">WM</span><span><strong>Client</strong><small>Secure account</small></span><button id="sign-out" class="text-button">Sign out</button></div>
   </header>
   <main class="dashboard-main" id="overview" aria-busy="true">
-    <section class="welcome-row"><div><span class="eyebrow">Client dashboard</span><h1>Welcome.</h1><p>Here’s what is moving across your WellMax projects.</p></div><a class="primary-button compact request-link" href="mailto:wellmaxadvertisingmedia@gmail.com?subject=New%20client%20request">Start a request <span>＋</span></a></section>
+    <section class="welcome-row"><div><span class="eyebrow">Client dashboard</span><h1>Welcome.</h1><p>Here’s what is moving across your WellMax projects.</p></div><button id="open-request" class="primary-button compact request-link" type="button">Start a request <span>＋</span></button></section>
     <section class="metric-grid" aria-label="Project summary">
       <article><span class="metric-icon violet">◫</span><div><small>Active projects</small><strong id="active-count">—</strong><p>Currently in progress</p></div></article>
       <article><span class="metric-icon lime">✓</span><div><small>Awaiting approval</small><strong id="approval-count">—</strong><p>Your action may be needed</p></div></article>
@@ -31,7 +31,22 @@
       <article class="panel files-panel"><div class="panel-heading"><div><span class="eyebrow">Secure delivery</span><h2>Recent files</h2></div></div><div id="file-list" class="file-grid"><p class="loading-state">Loading files…</p></div></article>
       <aside class="panel activity-panel" id="messages"><div class="panel-heading"><div><span class="eyebrow">Live updates</span><h2>Activity</h2></div></div><ul id="activity-list"><li class="loading-state">Loading updates…</li></ul></aside>
     </section>
+    <section class="panel requests-panel" id="requests">
+      <div class="panel-heading"><div><span class="eyebrow">Briefs</span><h2>Your requests</h2></div><button id="open-request-secondary" class="text-button" type="button">New request ＋</button></div>
+      <div id="request-list" class="dynamic-list"><p class="loading-state">Loading requests…</p></div>
+    </section>
   </main>
+  <dialog id="request-dialog">
+    <form id="request-form" method="dialog">
+      <div class="dialog-heading"><div><span class="eyebrow">New brief</span><h2>Start a request</h2></div><button id="close-request" class="dialog-close" type="button" aria-label="Close">×</button></div>
+      <label>Request title<input name="title" type="text" maxlength="120" placeholder="e.g. August social campaign" required></label>
+      <label>Service<select name="serviceType" required><option value="">Select a service</option><option>Brand strategy & identity</option><option>Graphic & packaging design</option><option>Social media marketing</option><option>Paid media & email</option><option>Website design</option><option>Copy & content</option><option>Other</option></select></label>
+      <label>What do you need?<textarea name="description" rows="6" maxlength="5000" placeholder="Describe the goal, deliverables and important details…" required></textarea></label>
+      <label>Preferred deadline<input name="desiredDueAt" type="date"></label>
+      <button class="primary-button" type="submit">Submit request <span>↗</span></button>
+      <p id="request-message" class="form-message" role="status"></p>
+    </form>
+  </dialog>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="config.js"></script>
   <script src="portal.js"></script>
