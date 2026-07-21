@@ -1,6 +1,12 @@
 const loginForm = document.querySelector('#login-form');
 const loginMessage = document.querySelector('#login-message');
 const recoveryForm = document.querySelector('#recovery-form');
+const signupForm = document.querySelector('#signup-form');
+const signupMessage = document.querySelector('#signup-message');
+const authTabs = document.querySelectorAll('[data-auth-view]');
+const requestDialog = document.querySelector('#request-dialog');
+const requestForm = document.querySelector('#request-form');
+const requestMessage = document.querySelector('#request-message');
 const recoveryMessage = document.querySelector('#recovery-message');
 const forgotPassword = document.querySelector('#forgot-password');
 const signOut = document.querySelector('#sign-out');
@@ -19,6 +25,47 @@ function setMessage(element, message, isError = false) {
   element.classList.toggle('error', isError);
   element.classList.add('visible');
 }
+
+function showAuthView(view) {
+  if (!loginForm || !signupForm) return;
+  const signingUp = view === 'signup';
+  loginForm.hidden = signingUp;
+  signupForm.hidden = !signingUp;
+  recoveryForm.hidden = true;
+  authTabs.forEach(tab => tab.classList.toggle('active', tab.dataset.authView === view));
+  document.querySelector('.login-card h2').textContent = signingUp ? 'Create your account' : 'Sign in to your portal';
+  document.querySelector('.login-card .muted').textContent = signingUp
+    ? 'Register now. WellMax will review and approve your workspace access.'
+    : 'Access projects, approvals, files and requests securely.';
+}
+authTabs.forEach(tab => tab.addEventListener('click', () => showAuthView(tab.dataset.authView)));
+
+signupForm?.addEventListener('submit', async event => {
+  event.preventDefault();
+  if (!supabaseClient) return setMessage(signupMessage, 'The secure connection is unavailable.', true);
+  const button = signupForm.querySelector('[type="submit"]');
+  button.disabled = true;
+  const { data, error } = await supabaseClient.auth.signUp({
+    email: signupForm.email.value.trim(),
+    password: signupForm.password.value,
+    options: {
+      emailRedirectTo: new URL('index.html', location.href).href,
+      data: {
+        full_name: signupForm.fullName.value.trim(),
+        company_name: signupForm.companyName.value.trim()
+      }
+    }
+  });
+  if (error) {
+    setMessage(signupMessage, error.message, true);
+    button.disabled = false;
+    return;
+  }
+  if (data.session) await supabaseClient.auth.signOut();
+  signupForm.reset();
+  setMessage(signupMessage, 'Account created. Check your email if confirmation is required. WellMax will approve your portal access.');
+  button.disabled = false;
+});
 
 function showRecovery() {
   if (!loginForm || !recoveryForm) return;
@@ -39,6 +86,13 @@ loginForm?.addEventListener('submit', async event => {
   });
   if (error) {
     setMessage(loginMessage, error.message === 'Invalid login credentials' ? 'The email or password is incorrect.' : error.message, true);
+    button.disabled = false;
+    return;
+  }
+  const { data: profile } = await supabaseClient.from('profiles').select('approved').maybeSingle();
+  if (!profile?.approved) {
+    await supabaseClient.auth.signOut();
+    setMessage(loginMessage, 'Your account is waiting for WellMax approval. We will enable access after reviewing your registration.', true);
     button.disabled = false;
     return;
   }
@@ -142,6 +196,22 @@ function renderFiles(files) {
   });
 }
 
+function renderRequests(requests) {
+  const list = document.querySelector('#request-list');
+  if (!list) return;
+  list.replaceChildren();
+  if (!requests.length) return list.append(emptyState('No requests yet. Use “Start a request” to send your first brief.'));
+  requests.forEach(request => {
+    const row = document.createElement('div'); row.className = 'request-row';
+    const copy = document.createElement('div');
+    const title = document.createElement('strong'); title.textContent = request.title;
+    const detail = document.createElement('small'); detail.textContent = `${request.service_type} · ${new Date(request.created_at).toLocaleDateString()}`;
+    copy.append(title, detail);
+    const status = document.createElement('span'); status.className = 'status review'; status.textContent = statusLabel(request.status);
+    row.append(copy, status); list.append(row);
+  });
+}
+
 function renderActivity(comments) {
   const list = document.querySelector('#activity-list');
   list.replaceChildren();
@@ -162,13 +232,17 @@ async function protectDashboard() {
   const { data: { session } } = await supabaseClient.auth.getSession();
   if (!session) return location.replace('index.html');
   const [profileResult, projectsResult, filesResult, approvalsResult, commentsResult] = await Promise.all([
-    supabaseClient.from('profiles').select('full_name,role').eq('id', session.user.id).maybeSingle(),
+    supabaseClient.from('profiles').select('full_name,role,approved').eq('id', session.user.id).maybeSingle(),
     supabaseClient.from('projects').select('id,title,description,status,progress,due_at,updated_at').order('updated_at', { ascending: false }),
     supabaseClient.from('project_files').select('id,name,storage_path,mime_type,size_bytes,created_at').order('created_at', { ascending: false }),
     supabaseClient.from('approvals').select('id,title,status,created_at').eq('status', 'pending').order('created_at', { ascending: false }),
     supabaseClient.from('comments').select('id,body,created_at').order('created_at', { ascending: false })
   ]);
   const profile = profileResult.data;
+  if (!profile?.approved) {
+    await supabaseClient.auth.signOut();
+    return location.replace('index.html?pending=1');
+  }
   const projects = projectsResult.data || [];
   const files = filesResult.data || [];
   const approvals = approvalsResult.data || [];
@@ -186,9 +260,33 @@ async function protectDashboard() {
   document.querySelector('#file-count').textContent = files.length;
   const deadlines = projects.map(p => p.due_at).filter(Boolean).map(value => new Date(value)).filter(date => date >= new Date()).sort((a, b) => a - b);
   document.querySelector('#next-deadline').textContent = deadlines[0] ? deadlines[0].toLocaleDateString(undefined, { day: 'numeric', month: 'short' }) : 'None';
-  renderProjects(projects); renderApprovals(approvals); renderFiles(files); renderActivity(comments);
+  const { data: requests } = await supabaseClient.from('service_requests').select('id,title,service_type,status,created_at').order('created_at', { ascending: false });
+  renderProjects(projects); renderApprovals(approvals); renderFiles(files); renderActivity(comments); renderRequests(requests || []);
   document.querySelector('.dashboard-main').setAttribute('aria-busy', 'false');
 }
+
+document.querySelectorAll('#open-request,#open-request-secondary').forEach(button => button?.addEventListener('click', () => requestDialog?.showModal()));
+document.querySelector('#close-request')?.addEventListener('click', () => requestDialog?.close());
+requestDialog?.addEventListener('click', event => { if (event.target === requestDialog) requestDialog.close(); });
+requestForm?.addEventListener('submit', async event => {
+  event.preventDefault();
+  const { data: { user } } = await supabaseClient.auth.getUser();
+  const { data: membership } = await supabaseClient.from('client_members').select('client_id').eq('user_id', user.id).maybeSingle();
+  if (!membership) return setMessage(requestMessage, 'Your account is not assigned to a client workspace yet.', true);
+  const payload = {
+    client_id: membership.client_id,
+    created_by: user.id,
+    title: requestForm.title.value.trim(),
+    service_type: requestForm.serviceType.value,
+    description: requestForm.description.value.trim(),
+    desired_due_at: requestForm.desiredDueAt.value || null
+  };
+  const { error } = await supabaseClient.from('service_requests').insert(payload);
+  if (error) return setMessage(requestMessage, error.message, true);
+  setMessage(requestMessage, 'Request submitted to WellMax.');
+  requestForm.reset();
+  setTimeout(() => location.reload(), 700);
+});
 
 signOut?.addEventListener('click', async () => {
   if (supabaseClient) await supabaseClient.auth.signOut();
