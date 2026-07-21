@@ -23,6 +23,7 @@
     form.querySelectorAll('input').forEach(input => { input.readOnly = false; });
     form.querySelector('.signup-action').textContent = 'Send verification code';
     delete form.dataset.otpStep;
+    delete form.dataset.otpEmail;
   };
 
   form.addEventListener('submit', async event => {
@@ -39,10 +40,10 @@
 
     try {
       if (!otpStep) {
-        const { data, error } = await client.auth.signUp({
+        const { error } = await client.auth.signInWithOtp({
           email,
-          password,
           options: {
+            shouldCreateUser: true,
             data: {
               full_name: form.fullName.value.trim(),
               company_name: form.companyName.value.trim()
@@ -52,31 +53,34 @@
 
         if (error) throw error;
 
-        if (data.session) {
-          await client.auth.signOut();
-          resetForm();
-          showMessage('Account created. WellMax will review and approve your portal access.');
-          return;
-        }
-
         form.dataset.otpStep = 'true';
+        form.dataset.otpEmail = email;
         otpField.hidden = false;
         form.otp.required = true;
         form.querySelectorAll('input:not([name="otp"])').forEach(input => { input.readOnly = true; });
         form.querySelector('.signup-action').textContent = 'Verify email & create account';
-        showMessage('We sent a verification code to your email. Enter the newest code below.');
+        showMessage('A new verification code was sent. Enter the newest code from this email only.');
         form.otp.focus();
         return;
       }
 
-      const token = form.otp.value.replace(/\s/g, '');
-      const { error } = await client.auth.verifyOtp({
-        email,
+      const token = form.otp.value.replace(/\D/g, '');
+      const requestedEmail = form.dataset.otpEmail || email;
+
+      if (token.length < 6 || token.length > 8) {
+        throw new Error('Enter the complete verification code from the newest email.');
+      }
+
+      const { error: verifyError } = await client.auth.verifyOtp({
+        email: requestedEmail,
         token,
-        type: 'signup'
+        type: 'email'
       });
 
-      if (error) throw error;
+      if (verifyError) throw verifyError;
+
+      const { error: passwordError } = await client.auth.updateUser({ password });
+      if (passwordError) throw passwordError;
 
       await client.auth.signOut();
       resetForm();
