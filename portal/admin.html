@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Admin Portal | WellMax</title>
+  <link rel="icon" href="../images/favicon.png">
+  <link rel="stylesheet" href="admin.css?v=20260721-1">
+</head>
+<body>
+  <aside class="admin-sidebar">
+    <a class="admin-brand" href="../index.html"><img src="../images/wellmax-brand.png" alt="WellMax"></a>
+    <p class="admin-label">Admin workspace</p>
+    <nav>
+      <a class="active" href="#overview">Overview</a>
+      <a href="#clients">Clients</a>
+      <a href="#projects">Projects</a>
+      <a href="#approvals">Approvals</a>
+      <a href="#requests">Requests</a>
+    </nav>
+    <button id="admin-sign-out" class="sign-out" type="button">Sign out</button>
+  </aside>
+
+  <main class="admin-main">
+    <header class="admin-topbar">
+      <div><span class="eyebrow">WellMax control center</span><h1>Admin dashboard</h1></div>
+      <div class="admin-user"><span id="admin-avatar">WM</span><div><strong id="admin-name">WellMax Admin</strong><small>Administrator</small></div></div>
+    </header>
+
+    <p id="admin-message" class="admin-message" role="status"></p>
+
+    <section id="overview" class="metrics">
+      <article><small>Client accounts</small><strong id="metric-clients">—</strong></article>
+      <article><small>Active projects</small><strong id="metric-projects">—</strong></article>
+      <article><small>Pending approvals</small><strong id="metric-approvals">—</strong></article>
+      <article><small>Open requests</small><strong id="metric-requests">—</strong></article>
+    </section>
+
+    <section id="clients" class="admin-panel">
+      <div class="panel-heading"><div><span class="eyebrow">Access management</span><h2>Client accounts</h2></div><button id="refresh-admin" type="button">Refresh</button></div>
+      <div class="table-wrap"><table><thead><tr><th>Name</th><th>Role</th><th>Status</th><th>Created</th><th>Action</th></tr></thead><tbody id="client-rows"></tbody></table></div>
+    </section>
+
+    <section id="projects" class="admin-panel split-panel">
+      <div>
+        <div class="panel-heading"><div><span class="eyebrow">Delivery</span><h2>Projects</h2></div></div>
+        <div id="project-rows" class="card-list"></div>
+      </div>
+      <form id="project-form" class="editor-card">
+        <span class="eyebrow">Create project</span>
+        <label>Client<select name="clientId" required><option value="">Select client</option></select></label>
+        <label>Project title<input name="title" required maxlength="120"></label>
+        <label>Description<textarea name="description" rows="4"></textarea></label>
+        <div class="form-grid"><label>Status<select name="status"><option value="active">Active</option><option value="in_progress">In progress</option><option value="review">Review</option><option value="completed">Completed</option></select></label><label>Progress<input name="progress" type="number" min="0" max="100" value="0"></label></div>
+        <label>Deadline<input name="dueAt" type="date"></label>
+        <button type="submit">Create project</button>
+      </form>
+    </section>
+
+    <section id="approvals" class="admin-panel">
+      <div class="panel-heading"><div><span class="eyebrow">Review queue</span><h2>Approvals</h2></div></div>
+      <div id="approval-rows" class="card-list"></div>
+    </section>
+
+    <section id="requests" class="admin-panel">
+      <div class="panel-heading"><div><span class="eyebrow">Incoming briefs</span><h2>Client requests</h2></div></div>
+      <div id="request-rows" class="card-list"></div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="admin.js?v=20260721-1"></script>
+</body>
+</html>
