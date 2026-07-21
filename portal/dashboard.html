@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Project Dashboard | WellMax Client Portal</title>
+  <link rel="icon" href="../images/favicon.png">
+  <link rel="stylesheet" href="portal.css">
+</head>
+<body class="dashboard-page">
+  <header class="dashboard-header">
+    <a class="portal-logo" href="../index.html" aria-label="WellMax home"><img src="../images/logo.png" alt="WellMax"></a>
+    <button class="mobile-menu" aria-label="Open portal navigation" aria-expanded="false">☰</button>
+    <nav class="dashboard-nav" aria-label="Portal navigation"><a class="active" href="#overview">Overview</a><a href="#projects">Projects</a><a href="#files">Files</a><a href="#messages">Updates</a></nav>
+    <div class="account"><span class="avatar">WM</span><span><strong>Client</strong><small>Secure account</small></span><button id="sign-out" class="text-button">Sign out</button></div>
+  </header>
+  <main class="dashboard-main" id="overview" aria-busy="true">
+    <section class="welcome-row"><div><span class="eyebrow">Client dashboard</span><h1>Welcome.</h1><p>Here’s what is moving across your WellMax projects.</p></div><a class="primary-button compact request-link" href="mailto:wellmaxadvertisingmedia@gmail.com?subject=New%20client%20request">Start a request <span>＋</span></a></section>
+    <section class="metric-grid" aria-label="Project summary">
+      <article><span class="metric-icon violet">◫</span><div><small>Active projects</small><strong id="active-count">—</strong><p>Currently in progress</p></div></article>
+      <article><span class="metric-icon lime">✓</span><div><small>Awaiting approval</small><strong id="approval-count">—</strong><p>Your action may be needed</p></div></article>
+      <article><span class="metric-icon peach">↓</span><div><small>Available files</small><strong id="file-count">—</strong><p>Secure project library</p></div></article>
+      <article><span class="metric-icon blue">◌</span><div><small>Next deadline</small><strong id="next-deadline" class="date">—</strong><p>Nearest scheduled delivery</p></div></article>
+    </section>
+    <section class="dashboard-grid" id="projects">
+      <article class="panel projects-panel"><div class="panel-heading"><div><span class="eyebrow">Workspace</span><h2>Your projects</h2></div></div><div id="project-list" class="dynamic-list"><p class="loading-state">Loading projects…</p></div></article>
+      <aside class="panel action-panel"><div class="panel-heading"><div><span class="eyebrow">Priority</span><h2>Needs your attention</h2></div><span id="attention-count" class="count">—</span></div><div id="approval-list" class="dynamic-list"><p class="loading-state">Checking approvals…</p></div></aside>
+    </section>
+    <section class="dashboard-grid lower-grid" id="files">
+      <article class="panel files-panel"><div class="panel-heading"><div><span class="eyebrow">Secure delivery</span><h2>Recent files</h2></div></div><div id="file-list" class="file-grid"><p class="loading-state">Loading files…</p></div></article>
+      <aside class="panel activity-panel" id="messages"><div class="panel-heading"><div><span class="eyebrow">Live updates</span><h2>Activity</h2></div></div><ul id="activity-list"><li class="loading-state">Loading updates…</li></ul></aside>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="portal.js"></script>
+</body>
+</html>

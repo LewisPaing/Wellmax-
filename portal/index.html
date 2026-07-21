@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Client Portal | WellMax</title>
+  <meta name="description" content="Secure WellMax client portal for projects, files, feedback and approvals.">
+  <link rel="icon" href="../images/favicon.png">
+  <link rel="stylesheet" href="portal.css">
+</head>
+<body class="portal-login-page">
+  <main class="login-shell">
+    <section class="login-brand" aria-label="WellMax Client Portal">
+      <a class="portal-logo" href="../index.html" aria-label="Return to WellMax home">
+        <img src="../images/logo.png" alt="WellMax Advertising and Media">
+      </a>
+      <div class="brand-copy">
+        <span class="eyebrow">Private client workspace</span>
+        <h1>Creative work,<br><em>clearly connected.</em></h1>
+        <p>Review progress, access deliverables and keep every decision in one secure place.</p>
+      </div>
+      <div class="portal-orbit" aria-hidden="true">
+        <span class="orb orb-one"></span><span class="orb orb-two"></span><span class="orb orb-three"></span>
+        <div class="portal-mark">W</div>
+      </div>
+      <p class="login-trust"><span>Secure access</span><span>Private files</span><span>Clear approvals</span></p>
+    </section>
+
+    <section class="login-panel">
+      <div class="login-card">
+        <span class="eyebrow">Welcome back</span>
+        <h2>Sign in to your portal</h2>
+        <p class="muted">Use the email address invited by WellMax.</p>
+        <form id="login-form" novalidate>
+          <label>Email address<input id="email" name="email" type="email" autocomplete="email" placeholder="name@company.com" required></label>
+          <label>Password<input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required></label>
+          <div class="form-row"><label class="remember"><input type="checkbox" name="remember"> Keep me signed in</label><button id="forgot-password" class="text-button" type="button">Forgot password?</button></div>
+          <button class="primary-button" type="submit">Sign in <span>↗</span></button>
+          <p id="login-message" class="form-message" role="status"></p>
+        </form>
+        <form id="recovery-form" class="recovery-form" hidden>
+          <label>New password<input id="new-password" name="newPassword" type="password" autocomplete="new-password" minlength="8" required></label>
+          <button class="primary-button" type="submit">Update password <span>↗</span></button>
+          <p id="recovery-message" class="form-message" role="status"></p>
+        </form>
+        <p class="support-note">Need access? Contact your WellMax project manager.</p>
+      </div>
+      <a class="back-link" href="../index.html">← Back to wellmaxagency.com</a>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="portal.js"></script>
+</body>
+</html>
