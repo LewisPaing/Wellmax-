@@ -1,47 +1,69 @@
 @media (max-width: 900px) {
-  .site-header {
+  .site-header,
+  .site-header.scrolled {
     position: fixed !important;
     top: env(safe-area-inset-top, 0) !important;
     left: 0 !important;
     right: 0 !important;
+    bottom: auto !important;
     z-index: 10000 !important;
+    width: 100% !important;
     height: 76px !important;
+    min-height: 76px !important;
     padding: 0 20px !important;
-    background: rgba(250, 247, 253, .94) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 16px !important;
+    background: rgba(250, 247, 253, .96) !important;
     border-bottom: 1px solid rgba(87, 43, 151, .16) !important;
     box-shadow: 0 12px 34px rgba(30, 10, 55, .12) !important;
     -webkit-backdrop-filter: blur(22px) saturate(1.35) !important;
     backdrop-filter: blur(22px) saturate(1.35) !important;
+    animation: none !important;
+    transform: none !important;
   }
 
-  .site-header .official-brand {
+  .site-header .official-brand,
+  .site-header.scrolled .official-brand {
     position: relative !important;
     z-index: 10002 !important;
     flex: 0 0 auto !important;
+    margin: 0 !important;
   }
 
-  .site-header .official-brand img {
+  .site-header .official-brand img,
+  .site-header.scrolled .official-brand img {
+    display: block !important;
     width: 190px !important;
     max-width: 52vw !important;
     height: auto !important;
+    margin: 0 !important;
+    transform: none !important;
   }
 
-  .menu-toggle {
+  .menu-toggle,
+  .site-header.scrolled .menu-toggle {
     position: relative !important;
     z-index: 10002 !important;
     display: grid !important;
     place-content: center !important;
+    flex: 0 0 48px !important;
     gap: 6px !important;
     width: 48px !important;
     height: 48px !important;
     padding: 0 !important;
+    margin: 0 !important;
     border: 1px solid rgba(77, 35, 139, .16) !important;
     border-radius: 15px !important;
     background: rgba(255, 255, 255, .72) !important;
     box-shadow: inset 0 1px 0 rgba(255,255,255,.9), 0 8px 22px rgba(48, 19, 87, .10) !important;
+    transform: none !important;
   }
 
-  .menu-toggle span {
+  .menu-toggle span,
+  .site-header.scrolled .menu-toggle span {
+    display: block !important;
     width: 24px !important;
     height: 2px !important;
     margin: 0 !important;
@@ -54,7 +76,8 @@
   .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0 !important; }
   .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg) !important; }
 
-  .site-header nav {
+  .site-header nav,
+  .site-header.scrolled nav {
     position: fixed !important;
     z-index: 10001 !important;
     inset: calc(76px + env(safe-area-inset-top, 0)) 0 0 0 !important;
@@ -63,7 +86,10 @@
     align-items: stretch !important;
     justify-content: flex-start !important;
     gap: 8px !important;
+    width: auto !important;
+    height: auto !important;
     padding: 28px 20px calc(34px + env(safe-area-inset-bottom, 0)) !important;
+    margin: 0 !important;
     overflow-y: auto !important;
     color: #17111e !important;
     background: linear-gradient(180deg, rgba(250,247,253,.98), rgba(239,229,250,.98)) !important;
@@ -72,9 +98,13 @@
     pointer-events: none !important;
     transform: translateY(-14px) !important;
     transition: opacity .25s ease, transform .25s ease, visibility .25s ease !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
   }
 
-  .site-header nav.open {
+  .site-header nav.open,
+  .site-header.scrolled nav.open {
     opacity: 1 !important;
     visibility: visible !important;
     pointer-events: auto !important;
@@ -82,7 +112,9 @@
   }
 
   .site-header nav > a,
-  .site-header nav > a:not(.nav-cta) {
+  .site-header nav > a:not(.nav-cta),
+  .site-header.scrolled nav > a,
+  .site-header.scrolled nav > a:not(.nav-cta) {
     position: relative !important;
     display: flex !important;
     align-items: center !important;
@@ -100,9 +132,11 @@
     font-weight: 700 !important;
     line-height: 1.2 !important;
     text-align: left !important;
+    transform: none !important;
   }
 
-  .site-header nav > a:not(.nav-cta)::after {
+  .site-header nav > a:not(.nav-cta)::after,
+  .site-header.scrolled nav > a:not(.nav-cta)::after {
     content: "↗" !important;
     position: static !important;
     width: auto !important;
@@ -112,7 +146,8 @@
     font-size: 18px !important;
   }
 
-  .site-header nav .nav-cta {
+  .site-header nav .nav-cta,
+  .site-header.scrolled nav .nav-cta {
     margin-top: 8px !important;
     color: #fff !important;
     background: linear-gradient(135deg, #7540d6, #2d124c) !important;
@@ -120,18 +155,26 @@
     box-shadow: 0 16px 32px rgba(68, 27, 123, .24) !important;
   }
 
-  body.menu-open {
-    overflow: hidden !important;
-  }
-
-  body { padding-top: 76px !important; }
+  body.menu-open { overflow: hidden !important; }
+  body { padding-top: calc(76px + env(safe-area-inset-top, 0)) !important; }
 }
 
 @media (max-width: 480px) {
-  .site-header { height: 70px !important; padding: 0 14px !important; }
-  .site-header .official-brand img { width: 166px !important; }
-  .menu-toggle { width: 44px !important; height: 44px !important; }
-  .site-header nav { inset: calc(70px + env(safe-area-inset-top, 0)) 0 0 0 !important; padding: 22px 14px calc(28px + env(safe-area-inset-bottom, 0)) !important; }
-  .site-header nav > a, .site-header nav > a:not(.nav-cta) { min-height: 54px !important; font-size: 18px !important; }
-  body { padding-top: 70px !important; }
+  .site-header,
+  .site-header.scrolled {
+    height: 70px !important;
+    min-height: 70px !important;
+    padding: 0 14px !important;
+  }
+  .site-header .official-brand img,
+  .site-header.scrolled .official-brand img { width: 166px !important; }
+  .menu-toggle,
+  .site-header.scrolled .menu-toggle { flex-basis: 44px !important; width: 44px !important; height: 44px !important; }
+  .site-header nav,
+  .site-header.scrolled nav { inset: calc(70px + env(safe-area-inset-top, 0)) 0 0 0 !important; padding: 22px 14px calc(28px + env(safe-area-inset-bottom, 0)) !important; }
+  .site-header nav > a,
+  .site-header nav > a:not(.nav-cta),
+  .site-header.scrolled nav > a,
+  .site-header.scrolled nav > a:not(.nav-cta) { min-height: 54px !important; font-size: 18px !important; }
+  body { padding-top: calc(70px + env(safe-area-inset-top, 0)) !important; }
 }
