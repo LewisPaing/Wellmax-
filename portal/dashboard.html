@@ -8,12 +8,13 @@
   <link rel="icon" href="../images/favicon.png">
   <link rel="stylesheet" href="portal.css">
   <link rel="stylesheet" href="mobile-nav.css?v=20260721-1">
+  <link rel="stylesheet" href="chat.css?v=20260721-1">
 </head>
 <body class="dashboard-page">
   <header class="dashboard-header">
     <a class="portal-logo" href="../index.html" aria-label="WellMax home"><img src="../images/wellmax-brand.png" alt="WellMax Advertising and Media"></a>
     <button class="mobile-menu" type="button" aria-label="Open portal navigation" aria-expanded="false"><span aria-hidden="true"></span></button>
-    <nav class="dashboard-nav" aria-label="Portal navigation"><a class="active" href="#overview">Overview</a><a href="#projects">Projects</a><a href="#files">Files</a><a href="#messages">Updates</a></nav>
+    <nav class="dashboard-nav" aria-label="Portal navigation"><a class="active" href="#overview">Overview</a><a href="#projects">Projects</a><a href="#files">Files</a><a href="#chat">Messages</a></nav>
     <div class="account"><span class="avatar">WM</span><span><strong>Client</strong><small>Secure account</small></span><button id="sign-out" class="text-button">Sign out</button></div>
   </header>
   <main class="dashboard-main" id="overview" aria-busy="true">
@@ -31,6 +32,17 @@
     <section class="dashboard-grid lower-grid" id="files">
       <article class="panel files-panel"><div class="panel-heading"><div><span class="eyebrow">Secure delivery</span><h2>Recent files</h2></div></div><div id="file-list" class="file-grid"><p class="loading-state">Loading files…</p></div></article>
       <aside class="panel activity-panel" id="messages"><div class="panel-heading"><div><span class="eyebrow">Live updates</span><h2>Activity</h2></div></div><ul id="activity-list"><li class="loading-state">Loading updates…</li></ul></aside>
+    </section>
+    <section class="panel chat-panel" id="chat">
+      <div class="panel-heading"><div><span class="eyebrow">Direct support</span><h2>Message WellMax</h2></div></div>
+      <div class="chat-layout">
+        <div id="client-chat-thread" class="chat-thread" aria-live="polite"><p class="chat-empty">Loading conversation…</p></div>
+        <form id="client-chat-form" class="chat-form">
+          <textarea name="message" maxlength="4000" placeholder="Write a message to the WellMax admin…" required></textarea>
+          <button class="primary-button compact" type="submit">Send <span>↗</span></button>
+        </form>
+        <p id="client-chat-status" class="chat-status" role="status"></p>
+      </div>
     </section>
     <section class="panel requests-panel" id="requests">
       <div class="panel-heading"><div><span class="eyebrow">Briefs</span><h2>Your requests</h2></div><button id="open-request-secondary" class="text-button" type="button">New request ＋</button></div>
@@ -51,6 +63,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="config.js"></script>
   <script src="portal.js"></script>
+  <script src="client-chat.js?v=20260721-1"></script>
   <script src="mobile-nav.js?v=20260721-1"></script>
 </body>
 </html>
