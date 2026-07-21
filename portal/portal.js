@@ -44,26 +44,62 @@ signupForm?.addEventListener('submit', async event => {
   event.preventDefault();
   if (!supabaseClient) return setMessage(signupMessage, 'The secure connection is unavailable.', true);
   const button = signupForm.querySelector('[type="submit"]');
+  const otpField = signupForm.querySelector('#otp-field');
+  const otpStep = !otpField.hidden;
   button.disabled = true;
-  const { data, error } = await supabaseClient.auth.signUp({
-    email: signupForm.email.value.trim(),
-    password: signupForm.password.value,
-    options: {
-      emailRedirectTo: new URL('index.html', location.href).href,
-      data: {
-        full_name: signupForm.fullName.value.trim(),
-        company_name: signupForm.companyName.value.trim()
+
+  if (!otpStep) {
+    const { error } = await supabaseClient.auth.signInWithOtp({
+      email: signupForm.email.value.trim(),
+      options: {
+        shouldCreateUser: true,
+        data: {
+          full_name: signupForm.fullName.value.trim(),
+          company_name: signupForm.companyName.value.trim()
+        }
       }
+    });
+    if (error) {
+      setMessage(signupMessage, error.message, true);
+      button.disabled = false;
+      return;
     }
-  });
-  if (error) {
-    setMessage(signupMessage, error.message, true);
+    otpField.hidden = false;
+    signupForm.otp.required = true;
+    signupForm.querySelectorAll('input:not([name="otp"])').forEach(input => input.readOnly = true);
+    signupForm.querySelector('.signup-action').textContent = 'Verify email & create account';
+    setMessage(signupMessage, 'We sent a 6-digit verification code to your email. Enter it below.');
+    signupForm.otp.focus();
     button.disabled = false;
     return;
   }
-  if (data.session) await supabaseClient.auth.signOut();
+
+  const { error: verifyError } = await supabaseClient.auth.verifyOtp({
+    email: signupForm.email.value.trim(),
+    token: signupForm.otp.value.trim(),
+    type: 'email'
+  });
+  if (verifyError) {
+    setMessage(signupMessage, 'That code is incorrect or expired. Please check your email and try again.', true);
+    button.disabled = false;
+    return;
+  }
+
+  const { error: passwordError } = await supabaseClient.auth.updateUser({
+    password: signupForm.password.value
+  });
+  if (passwordError) {
+    setMessage(signupMessage, passwordError.message, true);
+    button.disabled = false;
+    return;
+  }
+
+  await supabaseClient.auth.signOut();
   signupForm.reset();
-  setMessage(signupMessage, 'Account created. Check your email if confirmation is required. WellMax will approve your portal access.');
+  otpField.hidden = true;
+  signupForm.querySelectorAll('input').forEach(input => input.readOnly = false);
+  signupForm.querySelector('.signup-action').textContent = 'Send verification code';
+  setMessage(signupMessage, 'Email verified and account created. WellMax will review and approve your portal access.');
   button.disabled = false;
 });
 
