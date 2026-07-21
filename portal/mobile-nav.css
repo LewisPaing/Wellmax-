@@ -1,0 +1,170 @@
+@media (max-width: 980px) {
+  .dashboard-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 12px;
+    min-height: 72px;
+    padding: 12px max(16px, env(safe-area-inset-left)) 12px max(16px, env(safe-area-inset-right));
+    border-bottom: 1px solid rgba(91, 53, 145, .12);
+    background: rgba(255, 255, 255, .88);
+    box-shadow: 0 12px 35px rgba(31, 13, 55, .08);
+    backdrop-filter: blur(24px) saturate(150%);
+    -webkit-backdrop-filter: blur(24px) saturate(150%);
+  }
+
+  .dashboard-header .portal-logo {
+    min-width: 0;
+  }
+
+  .dashboard-header .portal-logo img {
+    width: clamp(118px, 34vw, 150px);
+    max-width: 100%;
+  }
+
+  .mobile-menu {
+    position: relative;
+    z-index: 1002;
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    border: 1px solid rgba(103, 58, 183, .18);
+    border-radius: 14px;
+    color: #3d1a6f;
+    background: linear-gradient(145deg, rgba(255,255,255,.98), rgba(244,238,252,.96));
+    box-shadow: 0 10px 24px rgba(58, 26, 94, .12);
+    font-size: 0;
+    cursor: pointer;
+  }
+
+  .mobile-menu::before,
+  .mobile-menu::after,
+  .mobile-menu span {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    border-radius: 999px;
+    background: currentColor;
+    transition: transform .24s ease, opacity .2s ease, top .24s ease;
+  }
+
+  .mobile-menu::before { top: 15px; }
+  .mobile-menu span { top: 22px; }
+  .mobile-menu::after { top: 29px; }
+
+  .mobile-menu[aria-expanded="true"]::before { top: 22px; transform: rotate(45deg); }
+  .mobile-menu[aria-expanded="true"] span { opacity: 0; }
+  .mobile-menu[aria-expanded="true"]::after { top: 22px; transform: rotate(-45deg); }
+
+  .dashboard-nav {
+    position: fixed;
+    z-index: 1001;
+    top: calc(72px + env(safe-area-inset-top));
+    left: 14px;
+    right: 14px;
+    display: grid;
+    gap: 8px;
+    max-height: 0;
+    padding: 0 14px;
+    overflow: hidden;
+    border: 1px solid transparent;
+    border-radius: 22px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-12px) scale(.985);
+    transform-origin: top center;
+    background: rgba(20, 10, 35, .96);
+    box-shadow: 0 28px 70px rgba(13, 5, 24, .34);
+    backdrop-filter: blur(26px) saturate(135%);
+    -webkit-backdrop-filter: blur(26px) saturate(135%);
+    transition: max-height .32s ease, padding .32s ease, opacity .2s ease, transform .28s ease, visibility .2s;
+  }
+
+  .dashboard-nav.open {
+    max-height: 420px;
+    padding: 14px;
+    border-color: rgba(255,255,255,.13);
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+  }
+
+  .dashboard-nav a {
+    display: flex;
+    align-items: center;
+    min-height: 50px;
+    padding: 0 16px;
+    border: 1px solid transparent;
+    border-radius: 14px;
+    color: rgba(255,255,255,.76);
+    font-size: .92rem;
+    font-weight: 750;
+    text-decoration: none;
+  }
+
+  .dashboard-nav a:hover,
+  .dashboard-nav a.active {
+    color: #fff;
+    border-color: rgba(205, 176, 255, .22);
+    background: linear-gradient(120deg, rgba(140, 87, 226, .3), rgba(255,255,255,.06));
+  }
+
+  .account {
+    justify-self: end;
+  }
+
+  .account .avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .account > span:not(.avatar),
+  .account .text-button {
+    display: none;
+  }
+
+  body.nav-open {
+    overflow: hidden;
+  }
+
+  body.nav-open::after {
+    content: "";
+    position: fixed;
+    z-index: 999;
+    inset: 0;
+    background: rgba(14, 7, 26, .38);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+  }
+}
+
+@media (max-width: 620px) {
+  .dashboard-header {
+    min-height: 66px;
+    padding-top: calc(10px + env(safe-area-inset-top));
+  }
+
+  .dashboard-nav {
+    top: calc(66px + env(safe-area-inset-top));
+    left: 10px;
+    right: 10px;
+  }
+
+  .mobile-menu {
+    width: 42px;
+    height: 42px;
+    border-radius: 13px;
+  }
+
+  .mobile-menu::before { top: 13px; }
+  .mobile-menu span { top: 20px; }
+  .mobile-menu::after { top: 27px; }
+  .mobile-menu[aria-expanded="true"]::before,
+  .mobile-menu[aria-expanded="true"]::after { top: 20px; }
+}
