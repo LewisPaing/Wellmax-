@@ -7,6 +7,7 @@
   <title>Admin Portal | WellMax</title>
   <link rel="icon" href="../images/favicon.png">
   <link rel="stylesheet" href="admin.css?v=20260721-1">
+  <link rel="stylesheet" href="chat.css?v=20260721-1">
 </head>
 <body>
   <aside class="admin-sidebar">
@@ -18,6 +19,7 @@
       <a href="#projects">Projects</a>
       <a href="#approvals">Approvals</a>
       <a href="#requests">Requests</a>
+      <a href="#chat">Messages</a>
     </nav>
     <button id="admin-sign-out" class="sign-out" type="button">Sign out</button>
   </aside>
@@ -67,10 +69,27 @@
       <div class="panel-heading"><div><span class="eyebrow">Incoming briefs</span><h2>Client requests</h2></div></div>
       <div id="request-rows" class="card-list"></div>
     </section>
+
+    <section id="chat" class="admin-panel">
+      <div class="panel-heading"><div><span class="eyebrow">Direct communication</span><h2>Client messages</h2></div></div>
+      <div class="admin-chat-shell">
+        <aside id="conversation-list" class="conversation-list"><p class="chat-empty">Loading conversations…</p></aside>
+        <div>
+          <div class="panel-heading"><div><span class="eyebrow">Conversation</span><h2 id="admin-chat-title">Select a client</h2></div></div>
+          <div id="admin-chat-thread" class="chat-thread" aria-live="polite"><p class="chat-empty">Choose a client to view messages.</p></div>
+          <form id="admin-chat-form" class="chat-form">
+            <textarea name="message" maxlength="4000" placeholder="Write a reply…" required></textarea>
+            <button type="submit">Send reply</button>
+          </form>
+          <p id="admin-chat-status" class="chat-status" role="status"></p>
+        </div>
+      </div>
+    </section>
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="config.js"></script>
   <script src="admin.js?v=20260721-1"></script>
+  <script src="admin-chat.js?v=20260721-1"></script>
 </body>
 </html>
