@@ -1,3 +1,5 @@
+@import url("main-mobile-nav-fix.css?v=20260721-2308");
+
 @media(min-width:901px){
   .site-header nav{padding:9px!important;gap:6px!important;border:1px solid rgba(113,61,191,.28)!important;outline:1px solid rgba(255,255,255,.72);outline-offset:-2px;background:linear-gradient(135deg,rgba(247,239,255,.76),rgba(207,178,250,.46) 52%,rgba(244,235,255,.66))!important;-webkit-backdrop-filter:blur(30px) saturate(1.85)!important;backdrop-filter:blur(30px) saturate(1.85)!important;box-shadow:inset 0 2px 1px rgba(255,255,255,.96),inset 0 -2px 2px rgba(92,40,171,.12),0 18px 42px rgba(65,24,126,.20),0 4px 12px rgba(55,16,111,.10)!important}
   .site-header nav>a:not(.nav-cta){padding:12px 20px!important;border:1px solid rgba(255,255,255,.42)!important;background:linear-gradient(145deg,rgba(255,255,255,.32),rgba(255,255,255,.10))!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.58);border-radius:999px!important}
