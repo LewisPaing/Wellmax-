@@ -7,11 +7,12 @@
   <title>Project Dashboard | WellMax Client Portal</title>
   <link rel="icon" href="../images/favicon.png">
   <link rel="stylesheet" href="portal.css">
+  <link rel="stylesheet" href="mobile-nav.css?v=20260721-1">
 </head>
 <body class="dashboard-page">
   <header class="dashboard-header">
     <a class="portal-logo" href="../index.html" aria-label="WellMax home"><img src="../images/wellmax-brand.png" alt="WellMax Advertising and Media"></a>
-    <button class="mobile-menu" aria-label="Open portal navigation" aria-expanded="false">☰</button>
+    <button class="mobile-menu" type="button" aria-label="Open portal navigation" aria-expanded="false"><span aria-hidden="true"></span></button>
     <nav class="dashboard-nav" aria-label="Portal navigation"><a class="active" href="#overview">Overview</a><a href="#projects">Projects</a><a href="#files">Files</a><a href="#messages">Updates</a></nav>
     <div class="account"><span class="avatar">WM</span><span><strong>Client</strong><small>Secure account</small></span><button id="sign-out" class="text-button">Sign out</button></div>
   </header>
@@ -50,5 +51,6 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="config.js"></script>
   <script src="portal.js"></script>
+  <script src="mobile-nav.js?v=20260721-1"></script>
 </body>
 </html>
