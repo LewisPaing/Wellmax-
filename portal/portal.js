@@ -13,11 +13,7 @@ const signOut = document.querySelector('#sign-out');
 const mobileMenu = document.querySelector('.mobile-menu');
 const dashboardNav = document.querySelector('.dashboard-nav');
 const config = window.WELLMAX_SUPABASE;
-const supabaseClient = config && window.supabase
-  ? window.supabase.createClient(config.url, config.publishableKey, {
-      auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true }
-    })
-  : null;
+const supabaseClient = window.WELLMAX_SUPABASE_CLIENT || null;
 
 function setMessage(element, message, isError = false) {
   if (!element) return;
