@@ -30,7 +30,7 @@
     window.addEventListener(type, loadTag, { once: true, passive: true });
   });
   window.addEventListener('load', () => {
-    window.setTimeout(loadTag, 6000);
+    window.setTimeout(loadTag, 15000);
   }, { once: true });
 
   document.addEventListener('click', event => {
