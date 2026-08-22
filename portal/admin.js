@@ -1,10 +1,8 @@
 (() => {
   const config = window.WELLMAX_SUPABASE;
-  if (!window.supabase || !config) return;
+  if (!window.WELLMAX_SUPABASE_CLIENT || !config) return;
 
-  const client = window.supabase.createClient(config.url, config.publishableKey, {
-    auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true }
-  });
+  const client = window.WELLMAX_SUPABASE_CLIENT;
 
   const $ = selector => document.querySelector(selector);
   const message = $('#admin-message');
