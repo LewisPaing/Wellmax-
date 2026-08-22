@@ -21,6 +21,7 @@
   };
 
   const label = value => String(value || '').replaceAll('_', ' ').replace(/\b\w/g, char => char.toUpperCase());
+  const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
   const date = value => value ? new Date(value).toLocaleDateString() : '—';
   const empty = text => `<p class="empty">${text}</p>`;
   const clientName = row => row?.name || row?.company_name || row?.title || `Client ${String(row?.id || '').slice(0, 6)}`;
@@ -88,11 +89,11 @@
       const tr = document.createElement('tr');
       const approved = Boolean(profile.approved);
       tr.innerHTML = `
-        <td><strong>${profile.full_name || 'Unnamed client'}</strong></td>
-        <td>${label(profile.role)}</td>
+        <td><strong>${escapeHtml(profile.full_name || 'Unnamed client')}</strong></td>
+        <td>${escapeHtml(label(profile.role))}</td>
         <td><span class="status-pill ${approved ? 'ok' : 'wait'}">${approved ? 'Approved' : 'Pending'}</span></td>
-        <td>${date(profile.created_at)}</td>
-        <td><button class="row-action" data-profile-id="${profile.id}" data-approved="${approved}">${approved ? 'Suspend' : 'Approve'}</button></td>`;
+        <td>${escapeHtml(date(profile.created_at))}</td>
+        <td><button class="row-action" data-profile-id="${escapeHtml(profile.id)}" data-approved="${approved}">${approved ? 'Suspend' : 'Approve'}</button></td>`;
       tbody.append(tr);
     });
   }
@@ -107,10 +108,10 @@
       card.className = 'admin-card';
       const owner = clients.find(item => item.id === project.client_id);
       card.innerHTML = `
-        <div><strong>${project.title || 'Untitled project'}</strong><p>${clientName(owner)} · ${label(project.status)} · ${Number(project.progress || 0)}% · Due ${date(project.due_at)}</p></div>
+        <div><strong>${escapeHtml(project.title || 'Untitled project')}</strong><p>${escapeHtml(clientName(owner))} · ${escapeHtml(label(project.status))} · ${Number(project.progress || 0)}% · Due ${escapeHtml(date(project.due_at))}</p></div>
         <div class="admin-card-actions">
-          <button class="row-action" data-project-id="${project.id}" data-progress="${Number(project.progress || 0)}">Update progress</button>
-          <button class="row-action" data-project-complete="${project.id}">Mark complete</button>
+          <button class="row-action" data-project-id="${escapeHtml(project.id)}" data-progress="${Number(project.progress || 0)}">Update progress</button>
+          <button class="row-action" data-project-complete="${escapeHtml(project.id)}">Mark complete</button>
         </div>`;
       list.append(card);
     });
@@ -124,7 +125,7 @@
     approvals.forEach(item => {
       const card = document.createElement('article');
       card.className = 'admin-card';
-      card.innerHTML = `<div><strong>${item.title || 'Approval item'}</strong><p>${label(item.status)} · ${date(item.created_at)}</p></div><div class="admin-card-actions">${item.status === 'pending' ? `<button class="row-action" data-approval-id="${item.id}" data-status="approved">Approve</button><button class="row-action" data-approval-id="${item.id}" data-status="rejected">Reject</button>` : ''}</div>`;
+      card.innerHTML = `<div><strong>${escapeHtml(item.title || 'Approval item')}</strong><p>${escapeHtml(label(item.status))} · ${escapeHtml(date(item.created_at))}</p></div><div class="admin-card-actions">${item.status === 'pending' ? `<button class="row-action" data-approval-id="${escapeHtml(item.id)}" data-status="approved">Approve</button><button class="row-action" data-approval-id="${escapeHtml(item.id)}" data-status="rejected">Reject</button>` : ''}</div>`;
       list.append(card);
     });
   }
@@ -137,7 +138,7 @@
     requests.forEach(item => {
       const card = document.createElement('article');
       card.className = 'admin-card';
-      card.innerHTML = `<div><strong>${item.title || 'Client request'}</strong><p>${item.service_type || 'General'} · ${label(item.status)} · ${date(item.created_at)}</p></div><div class="admin-card-actions"><button class="row-action" data-request-id="${item.id}" data-status="in_progress">Start</button><button class="row-action" data-request-id="${item.id}" data-status="completed">Complete</button></div>`;
+      card.innerHTML = `<div><strong>${escapeHtml(item.title || 'Client request')}</strong><p>${escapeHtml(item.service_type || 'General')} · ${escapeHtml(label(item.status))} · ${escapeHtml(date(item.created_at))}</p></div><div class="admin-card-actions"><button class="row-action" data-request-id="${escapeHtml(item.id)}" data-status="in_progress">Start</button><button class="row-action" data-request-id="${escapeHtml(item.id)}" data-status="completed">Complete</button></div>`;
       list.append(card);
     });
   }
