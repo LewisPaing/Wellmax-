@@ -161,7 +161,17 @@
     try {
       if (button.dataset.profileId) {
         const approved = button.dataset.approved !== 'true';
-        const { error } = await client.from('profiles').update({ approved }).eq('id', button.dataset.profileId);
+        button.disabled = true;
+        button.setAttribute('aria-busy', 'true');
+        const originalLabel = button.textContent;
+        button.textContent = approved ? 'Approving…' : 'Suspending…';
+        const { error } = await client.rpc('set_profile_approval', {
+          target_profile: button.dataset.profileId,
+          new_approved: approved
+        });
+        button.disabled = false;
+        button.removeAttribute('aria-busy');
+        button.textContent = originalLabel;
         if (error) throw error;
         show(approved ? 'Client account approved.' : 'Client account suspended.');
         return loadData();
