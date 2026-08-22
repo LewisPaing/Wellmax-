@@ -3,11 +3,9 @@
   const thread = document.querySelector('#client-chat-thread');
   const form = document.querySelector('#client-chat-form');
   const status = document.querySelector('#client-chat-status');
-  if (!config || !window.supabase || !thread || !form) return;
+  if (!config || !window.WELLMAX_SUPABASE_CLIENT || !thread || !form) return;
 
-  const db = window.supabase.createClient(config.url, config.publishableKey, {
-    auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true }
-  });
+  const db = window.WELLMAX_SUPABASE_CLIENT;
   let userId = null;
   let clientId = null;
   let channel = null;
