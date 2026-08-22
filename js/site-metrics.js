@@ -1,5 +1,7 @@
 (() => {
   const measurementId = 'G-BZS092V571';
+  if (window.__wellmaxAnalyticsConfigured) return;
+  window.__wellmaxAnalyticsConfigured = true;
 
   window.dataLayer = window.dataLayer || [];
   window.gtag = window.gtag || function gtag() {
@@ -12,15 +14,30 @@
     send_page_view: true
   });
 
-  const tag = document.createElement('script');
-  tag.async = true;
-  tag.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
-  document.head.append(tag);
+  let tagRequested = false;
+  const loadTag = () => {
+    if (tagRequested || document.getElementById('wellmax-ga4') ||
+        document.querySelector(`script[src*="googletagmanager.com/gtag/js?id=${measurementId}"]`)) return;
+    tagRequested = true;
+    const tag = document.createElement('script');
+    tag.id = 'wellmax-ga4';
+    tag.async = true;
+    tag.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+    document.head.append(tag);
+  };
+
+  ['pointerdown', 'keydown', 'touchstart', 'scroll'].forEach(type => {
+    window.addEventListener(type, loadTag, { once: true, passive: true });
+  });
+  window.addEventListener('load', () => {
+    window.setTimeout(loadTag, 6000);
+  }, { once: true });
 
   document.addEventListener('click', event => {
     const link = event.target.closest('a[href]');
     if (!link) return;
 
+    loadTag();
     const href = link.getAttribute('href') || '';
     const label = (link.textContent || link.getAttribute('aria-label') || '').trim().slice(0, 100);
 
