@@ -210,7 +210,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "ICON_DIR=\"$SRCROOT/WellMax/Assets.xcassets/AppIcon.appiconset\"\nICON_FILE=\"$ICON_DIR/AppIcon-1024.png\"\nif [ ! -f \"$ICON_FILE\" ]; then\n  cat \"$ICON_DIR\"/AppIcon-1024.png.base64.part-* | /usr/bin/base64 -D -o \"$ICON_FILE\"\nfi\n";
+			shellScript = "ICON_DIR=\"$SRCROOT/WellMax/Assets.xcassets/AppIcon.appiconset\"\nICON_FILE=\"$ICON_DIR/AppIcon-1024.png\"\nif [ ! -f \"$ICON_FILE\" ]; then\n  cat \"$ICON_DIR\"/AppIcon-profile.png.base64.part-* | /usr/bin/base64 -D -o \"$ICON_FILE\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
