@@ -616,3 +616,13 @@ img[loading="lazy"] { content-visibility:auto; }
   [data-parallax],
   .project-image img { will-change:auto !important; }
 }
+
+
+/* Mobile LCP: keep the first screen stable and text-first */
+.hero-copy h1 em { animation:none !important; transform:none !important; }
+@media (max-width:760px) {
+  .hero-art,
+  .orb { display:none !important; }
+  .hero { display:block; min-height:100svh; padding-bottom:52px; }
+  .hero-copy { padding-top:32px; }
+}
