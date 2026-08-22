@@ -23,7 +23,7 @@ Native SwiftUI MVP for WellMax Advertising & Media.
 6. Add the final 1024 × 1024 icon to `WellMax/Assets.xcassets/AppIcon.appiconset`.
 7. Run on an iPhone simulator or connected iPhone.
 
-The Xcode project automatically restores the app-icon PNG from its encoded source files when needed. This keeps the project portable through text-only repository integrations.
+The Xcode project automatically restores the supplied WellMax profile artwork from its encoded source files when needed. This keeps the exact approved icon portable through text-only repository integrations.
 
 ## Publishing checklist
 
