@@ -21,7 +21,7 @@ targets:
           ICON_DIR="$SRCROOT/WellMax/Assets.xcassets/AppIcon.appiconset"
           ICON_FILE="$ICON_DIR/AppIcon-1024.png"
           if [ ! -f "$ICON_FILE" ]; then
-            cat "$ICON_DIR"/AppIcon-1024.png.base64.part-* | /usr/bin/base64 -D -o "$ICON_FILE"
+            cat "$ICON_DIR"/AppIcon-profile.png.base64.part-* | /usr/bin/base64 -D -o "$ICON_FILE"
           fi
     info:
       path: WellMax/Supporting/Info.plist
