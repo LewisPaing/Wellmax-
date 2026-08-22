@@ -2,11 +2,9 @@
   const form = document.querySelector('#login-form');
   const message = document.querySelector('#login-message');
   const config = window.WELLMAX_SUPABASE;
-  if (!form || !window.supabase || !config) return;
+  if (!form || !window.WELLMAX_SUPABASE_CLIENT || !config) return;
 
-  const client = window.supabase.createClient(config.url, config.publishableKey, {
-    auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true }
-  });
+  const client = window.WELLMAX_SUPABASE_CLIENT;
 
   const show = (text, error = false) => {
     if (!message) return;
