@@ -1,13 +1,9 @@
 (() => {
   const form = document.querySelector('#signup-form');
   const message = document.querySelector('#signup-message');
-  if (!form || !window.supabase || !window.WELLMAX_SUPABASE) return;
+  if (!form || !window.WELLMAX_SUPABASE_CLIENT || !window.WELLMAX_SUPABASE) return;
 
-  const client = window.supabase.createClient(
-    window.WELLMAX_SUPABASE.url,
-    window.WELLMAX_SUPABASE.publishableKey,
-    { auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true } }
-  );
+  const client = window.WELLMAX_SUPABASE_CLIENT;
 
   const showMessage = (text, isError = false) => {
     message.textContent = text;
