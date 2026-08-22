@@ -19,6 +19,7 @@
     status.classList.toggle('error', error);
   };
   const clientName = client => client?.name || client?.company_name || client?.title || `Client ${String(client?.id || '').slice(0, 6)}`;
+  const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
 
   function renderConversations() {
     list.replaceChildren();
@@ -34,7 +35,7 @@
       button.type = 'button';
       button.className = `conversation-button${selectedClientId === client.id ? ' active' : ''}`;
       button.dataset.clientId = client.id;
-      button.innerHTML = `<strong>${clientName(client)}${unread ? `<span class="chat-unread">${unread}</span>` : ''}</strong><small>${latest ? latest.body.slice(0, 54) : 'No messages yet'}</small>`;
+      button.innerHTML = `<strong>${escapeHtml(clientName(client))}${unread ? `<span class="chat-unread">${unread}</span>` : ''}</strong><small>${escapeHtml(latest ? latest.body.slice(0, 54) : 'No messages yet')}</small>`;
       list.append(button);
     });
   }
