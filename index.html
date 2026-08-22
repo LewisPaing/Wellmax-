@@ -571,7 +571,34 @@
 </span> WellMax Advertising Media. All rights reserved.</p>
 <a href="#top">Back to top ↑</a>
 </footer>
-  <script src="js/modern.js?v=20260822-2" defer>
+  <script>
+(() => {
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('#site-nav');
+  toggle?.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!open));
+    nav?.classList.toggle('open');
+  });
+  nav?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    nav.classList.remove('open');
+    toggle?.setAttribute('aria-expanded', 'false');
+  }));
+
+  let requested = false;
+  const loadEnhancements = () => {
+    if (requested) return;
+    requested = true;
+    const script = document.createElement('script');
+    script.src = 'js/modern.js?v=20260822-3';
+    script.async = true;
+    document.body.append(script);
+  };
+  ['scroll', 'pointerdown', 'keydown', 'touchstart'].forEach(type => {
+    window.addEventListener(type, loadEnhancements, { once: true, passive: true });
+  });
+  window.addEventListener('load', () => window.setTimeout(loadEnhancements, 15000), { once: true });
+})();
 </script>
 <script src="js/nav-glass-v9.js" defer>
 </script>
