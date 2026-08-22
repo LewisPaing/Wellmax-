@@ -25,8 +25,6 @@ if(posterWall){
   posterWall.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')show(active-1,true);if(e.key==='ArrowRight')show(active+1,true);});
   show(0);restart();
 }
-toggle?.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')==='true';toggle.setAttribute('aria-expanded',String(!open));nav.classList.toggle('open');});
-nav?.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');}));
 if('IntersectionObserver' in window){
   const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}}),{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
