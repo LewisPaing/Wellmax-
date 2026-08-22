@@ -45,3 +45,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;op
 @media(max-width:900px){.hero-smoke{inset:-10% -35% -15%}.hero-smoke__layer--back{opacity:.3}.hero-smoke__ring--one{left:4%;top:27%}.hero-smoke__ring--two{right:10%;top:46%}}
 @media(max-width:600px){.hero-smoke{inset:0 -65% -5% -45%}.hero-smoke__layer--back{opacity:.25;transform:translate3d(var(--smoke-shift),0,0) scale(1.05)}.hero-smoke__layer--front{display:none}.hero-smoke__ring--one{left:26%;top:48%;min-width:270px;min-height:110px}.hero-smoke__ring--two{display:none}.hero-smoke__spark--one{left:35%;top:37%}}
 @media(prefers-reduced-motion:reduce){.hero-smoke,.hero-smoke__layer,.hero-smoke__ring,.hero-smoke__spark{transform:none!important;will-change:auto}}
+
+
+/* Prevent transformed decorative elements from widening mobile pages. */
+html, body { max-width: 100%; overflow-x: hidden; }
