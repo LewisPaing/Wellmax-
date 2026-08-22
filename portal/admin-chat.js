@@ -5,11 +5,9 @@
   const form = document.querySelector('#admin-chat-form');
   const title = document.querySelector('#admin-chat-title');
   const status = document.querySelector('#admin-chat-status');
-  if (!config || !window.supabase || !list || !thread || !form) return;
+  if (!config || !window.WELLMAX_SUPABASE_CLIENT || !list || !thread || !form) return;
 
-  const db = window.supabase.createClient(config.url, config.publishableKey, {
-    auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true }
-  });
+  const db = window.WELLMAX_SUPABASE_CLIENT;
   let adminId = null;
   let clients = [];
   let messages = [];
