@@ -721,3 +721,50 @@ img[loading="lazy"] { content-visibility:auto; }
   .hero h1 { font-size:39px !important; }
   .hero-intro { font-size:16px !important; }
 }
+
+
+/* Mobile navigation viewport fix v4 */
+@media (max-width:760px) {
+  .site-header,
+  .site-header.scrolled {
+    overflow:visible !important;
+    -webkit-backdrop-filter:none !important;
+    backdrop-filter:none !important;
+    background:#faf7fd !important;
+  }
+
+  .site-header nav,
+  .site-header.scrolled nav {
+    top:calc(68px + env(safe-area-inset-top, 0)) !important;
+    right:0 !important;
+    bottom:auto !important;
+    left:0 !important;
+    width:100vw !important;
+    height:calc(100dvh - 68px - env(safe-area-inset-top, 0)) !important;
+    min-height:calc(100vh - 68px) !important;
+    max-height:calc(100dvh - 68px - env(safe-area-inset-top, 0)) !important;
+    overflow-x:hidden !important;
+    overflow-y:auto !important;
+    overscroll-behavior:contain;
+    background:#f5eefb !important;
+  }
+
+  .site-header nav.open,
+  .site-header.scrolled nav.open {
+    display:flex !important;
+    opacity:1 !important;
+    visibility:visible !important;
+  }
+
+  .site-header nav > a,
+  .site-header nav > a:not(.nav-cta) {
+    flex:0 0 auto !important;
+    opacity:1 !important;
+    visibility:visible !important;
+    color:#1b1421 !important;
+  }
+
+  .site-header nav .nav-cta {
+    color:#fff !important;
+  }
+}
