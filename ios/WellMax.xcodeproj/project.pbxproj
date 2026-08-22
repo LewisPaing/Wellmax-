@@ -1,0 +1,478 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04F3B756FC32F3BDCC49FFBA /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE692496A9359A499029F3D /* Theme.swift */; };
+		0F5903F232EF7BF7F2E4409F /* ServicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3C10E2349410F43C57E565 /* ServicesView.swift */; };
+		149361E96D221D55A5B2E713 /* ClientPortalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396B8302E33FCA1F23E67810 /* ClientPortalView.swift */; };
+		237B4A8DF1F5AEC7555D14B4 /* ProjectInquiryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBFA7F220F86C2881091BD5 /* ProjectInquiryView.swift */; };
+		474C3450ECED27FD1ECEAC5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 389A1845BB595B9915A954F5 /* Assets.xcassets */; };
+		5D9AECB52FC8A91259833272 /* WorkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0C478EB232AE624CC5C49C /* WorkView.swift */; };
+		7335F329BA864CA3491606D6 /* AppContentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15677F3FC723AB1161A6217 /* AppContentTests.swift */; };
+		9C93DE22B8614C61BF0793AD /* WellMaxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B403FFC03AD0B1DDA204C9E /* WellMaxApp.swift */; };
+		9EFB91383134C25FDE40D599 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FA623815ECAFFC1BE858AF /* HomeView.swift */; };
+		A52226F9476BE11C3C0EB5FC /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54A97019A80F98CD847C5B0 /* RootView.swift */; };
+		A862BBAF89AAF9283FD6CDD2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0919ADA04E6AB6FCBB81E9 /* Models.swift */; };
+		DF186C6264024DC075283C77 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 64BE650B34B6AAD0D6E5D45C /* PrivacyInfo.xcprivacy */; };
+		F5AB9B6CC51D093AE86CEBBB /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8777AB843F788B84667CAEC7 /* Components.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		46B5CEC4C98345170CA627DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 31239C31C3D4913890FAF00E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 29C5BB006C33169FC87B99B9;
+			remoteInfo = WellMax;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0A9A9BE096B961D77045348D /* WellMaxTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = WellMaxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C3C10E2349410F43C57E565 /* ServicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesView.swift; sourceTree = "<group>"; };
+		2DBFA7F220F86C2881091BD5 /* ProjectInquiryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectInquiryView.swift; sourceTree = "<group>"; };
+		389A1845BB595B9915A954F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		396B8302E33FCA1F23E67810 /* ClientPortalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientPortalView.swift; sourceTree = "<group>"; };
+		3E0C478EB232AE624CC5C49C /* WorkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkView.swift; sourceTree = "<group>"; };
+		4B403FFC03AD0B1DDA204C9E /* WellMaxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellMaxApp.swift; sourceTree = "<group>"; };
+		64BE650B34B6AAD0D6E5D45C /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		7A0919ADA04E6AB6FCBB81E9 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		858BFC43816A2AE89A4B4892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8777AB843F788B84667CAEC7 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		9BE692496A9359A499029F3D /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		A2FA623815ECAFFC1BE858AF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		DA49AB872047D2812D5198B0 /* WellMax.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = WellMax.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E15677F3FC723AB1161A6217 /* AppContentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContentTests.swift; sourceTree = "<group>"; };
+		E54A97019A80F98CD847C5B0 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		3608EEC48AD80E016A96DC33 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				858BFC43816A2AE89A4B4892 /* Info.plist */,
+				64BE650B34B6AAD0D6E5D45C /* PrivacyInfo.xcprivacy */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
+		5760756F1D9ACBC8C0C2B35E = {
+			isa = PBXGroup;
+			children = (
+				B19742BE8224EC86AB15C40D /* WellMax */,
+				AC818F972F5B13644A32A1C3 /* WellMaxTests */,
+				E341DBAB0DE08DECDAFFD475 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AC818F972F5B13644A32A1C3 /* WellMaxTests */ = {
+			isa = PBXGroup;
+			children = (
+				E15677F3FC723AB1161A6217 /* AppContentTests.swift */,
+			);
+			path = WellMaxTests;
+			sourceTree = "<group>";
+		};
+		B19742BE8224EC86AB15C40D /* WellMax */ = {
+			isa = PBXGroup;
+			children = (
+				389A1845BB595B9915A954F5 /* Assets.xcassets */,
+				396B8302E33FCA1F23E67810 /* ClientPortalView.swift */,
+				8777AB843F788B84667CAEC7 /* Components.swift */,
+				A2FA623815ECAFFC1BE858AF /* HomeView.swift */,
+				7A0919ADA04E6AB6FCBB81E9 /* Models.swift */,
+				2DBFA7F220F86C2881091BD5 /* ProjectInquiryView.swift */,
+				E54A97019A80F98CD847C5B0 /* RootView.swift */,
+				2C3C10E2349410F43C57E565 /* ServicesView.swift */,
+				9BE692496A9359A499029F3D /* Theme.swift */,
+				4B403FFC03AD0B1DDA204C9E /* WellMaxApp.swift */,
+				3E0C478EB232AE624CC5C49C /* WorkView.swift */,
+				3608EEC48AD80E016A96DC33 /* Supporting */,
+			);
+			path = WellMax;
+			sourceTree = "<group>";
+		};
+		E341DBAB0DE08DECDAFFD475 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DA49AB872047D2812D5198B0 /* WellMax.app */,
+				0A9A9BE096B961D77045348D /* WellMaxTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		29C5BB006C33169FC87B99B9 /* WellMax */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88C6D36CFDBC5B486394278A /* Build configuration list for PBXNativeTarget "WellMax" */;
+			buildPhases = (
+				B8D836DE75BCA8D79F36801F /* Restore App Icon */,
+				3C66E2E5527D88F850B36E0F /* Sources */,
+				02BFCAC7EB651E680DB92058 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WellMax;
+			packageProductDependencies = (
+			);
+			productName = WellMax;
+			productReference = DA49AB872047D2812D5198B0 /* WellMax.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DC78BA2AE0EF1314C06D4FA3 /* WellMaxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B044ABC7D62B8AA28757FBCF /* Build configuration list for PBXNativeTarget "WellMaxTests" */;
+			buildPhases = (
+				A845F0F31C6499F6F88517C6 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				06199C40C9CB2A6EAF447808 /* PBXTargetDependency */,
+			);
+			name = WellMaxTests;
+			packageProductDependencies = (
+			);
+			productName = WellMaxTests;
+			productReference = 0A9A9BE096B961D77045348D /* WellMaxTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		31239C31C3D4913890FAF00E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					29C5BB006C33169FC87B99B9 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 42D9FA0C84B7613703C2AB6B /* Build configuration list for PBXProject "WellMax" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 5760756F1D9ACBC8C0C2B35E;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = E341DBAB0DE08DECDAFFD475 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				29C5BB006C33169FC87B99B9 /* WellMax */,
+				DC78BA2AE0EF1314C06D4FA3 /* WellMaxTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		02BFCAC7EB651E680DB92058 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				474C3450ECED27FD1ECEAC5C /* Assets.xcassets in Resources */,
+				DF186C6264024DC075283C77 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B8D836DE75BCA8D79F36801F /* Restore App Icon */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Restore App Icon";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "ICON_DIR=\"$SRCROOT/WellMax/Assets.xcassets/AppIcon.appiconset\"\nICON_FILE=\"$ICON_DIR/AppIcon-1024.png\"\nif [ ! -f \"$ICON_FILE\" ]; then\n  cat \"$ICON_DIR\"/AppIcon-1024.png.base64.part-* | /usr/bin/base64 -D -o \"$ICON_FILE\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3C66E2E5527D88F850B36E0F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				149361E96D221D55A5B2E713 /* ClientPortalView.swift in Sources */,
+				F5AB9B6CC51D093AE86CEBBB /* Components.swift in Sources */,
+				9EFB91383134C25FDE40D599 /* HomeView.swift in Sources */,
+				A862BBAF89AAF9283FD6CDD2 /* Models.swift in Sources */,
+				237B4A8DF1F5AEC7555D14B4 /* ProjectInquiryView.swift in Sources */,
+				A52226F9476BE11C3C0EB5FC /* RootView.swift in Sources */,
+				0F5903F232EF7BF7F2E4409F /* ServicesView.swift in Sources */,
+				04F3B756FC32F3BDCC49FFBA /* Theme.swift in Sources */,
+				9C93DE22B8614C61BF0793AD /* WellMaxApp.swift in Sources */,
+				5D9AECB52FC8A91259833272 /* WorkView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A845F0F31C6499F6F88517C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7335F329BA864CA3491606D6 /* AppContentTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		06199C40C9CB2A6EAF447808 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 29C5BB006C33169FC87B99B9 /* WellMax */;
+			targetProxy = 46B5CEC4C98345170CA627DC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		116E7BF7F9F17D1705929D93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WellMax/Supporting/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wellmaxagency.app;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		744B900D189697BAE29F16AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wellmaxagency.WellMaxTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WellMax.app/WellMax";
+			};
+			name = Release;
+		};
+		962682E21E02C71006DB4F0F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wellmaxagency.WellMaxTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WellMax.app/WellMax";
+			};
+			name = Debug;
+		};
+		B3DC72AE40EA529EB3BB7D92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		C196A4792A8FAF2A1D388EF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D652A85C10EB851B752096F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WellMax/Supporting/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wellmaxagency.app;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		42D9FA0C84B7613703C2AB6B /* Build configuration list for PBXProject "WellMax" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C196A4792A8FAF2A1D388EF5 /* Debug */,
+				B3DC72AE40EA529EB3BB7D92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		88C6D36CFDBC5B486394278A /* Build configuration list for PBXNativeTarget "WellMax" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D652A85C10EB851B752096F6 /* Debug */,
+				116E7BF7F9F17D1705929D93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B044ABC7D62B8AA28757FBCF /* Build configuration list for PBXNativeTarget "WellMaxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				962682E21E02C71006DB4F0F /* Debug */,
+				744B900D189697BAE29F16AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 31239C31C3D4913890FAF00E /* Project object */;
+}
