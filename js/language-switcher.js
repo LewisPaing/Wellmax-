@@ -88,7 +88,9 @@
     ['placeholder', 'aria-label', 'title'].forEach(function (attribute) {
       if (!element.hasAttribute(attribute)) return;
       var saved = originalAttributes.get(element) || {};
-      if (!saved[attribute]) saved[attribute] = element.getAttribute(attribute);
+      var dynamicLabel = element.dataset.i18nLabel;
+      if (dynamicLabel && (attribute === 'aria-label' || attribute === 'title')) saved[attribute] = dynamicLabel;
+      else if (!saved[attribute]) saved[attribute] = element.getAttribute(attribute);
       originalAttributes.set(element, saved);
       element.setAttribute(attribute, translated(saved[attribute], language));
     });
@@ -142,6 +144,9 @@
 
     var select = wrap.querySelector('select');
     select.addEventListener('change', function () { applyLanguage(select.value); });
+    document.addEventListener('wellmax:themechange', function () {
+      applyLanguage(document.documentElement.dataset.language || 'en');
+    });
     applyLanguage(savedLanguage());
 
     var observer = new MutationObserver(function (records) {

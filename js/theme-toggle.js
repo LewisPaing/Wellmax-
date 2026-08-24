@@ -26,9 +26,12 @@
     var button = document.querySelector('.theme-toggle');
     if (button) {
       var nextTheme = theme === 'dark' ? 'light' : 'dark';
-      button.setAttribute('aria-label', 'Switch to ' + nextTheme + ' mode');
-      button.setAttribute('title', 'Switch to ' + nextTheme + ' mode');
+      var label = 'Switch to ' + nextTheme + ' mode';
+      button.dataset.i18nLabel = label;
+      button.setAttribute('aria-label', label);
+      button.setAttribute('title', label);
       button.setAttribute('aria-pressed', String(theme === 'dark'));
+      document.dispatchEvent(new CustomEvent('wellmax:themechange'));
     }
 
     if (persist) {
@@ -48,7 +51,7 @@
     var button = document.createElement('button');
     button.className = 'theme-toggle';
     button.type = 'button';
-    button.innerHTML = '<span class="theme-toggle__icon theme-toggle__sun" aria-hidden="true">☀</span><span class="theme-toggle__icon theme-toggle__moon" aria-hidden="true">☾</span>';
+    button.innerHTML = '<span class="theme-toggle__icon theme-toggle__sun" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.75"></circle><path d="M12 2.2v2.1M12 19.7v2.1M2.2 12h2.1M19.7 12h2.1M5.1 5.1l1.5 1.5M17.4 17.4l1.5 1.5M18.9 5.1l-1.5 1.5M6.6 17.4l-1.5 1.5"></path></svg></span><span class="theme-toggle__icon theme-toggle__moon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.2 15.3A8.7 8.7 0 0 1 8.7 3.8 8.7 8.7 0 1 0 20.2 15.3Z"></path></svg></span>';
     button.addEventListener('click', function () {
       applyTheme(root.dataset.theme === 'dark' ? 'light' : 'dark', true);
     });
