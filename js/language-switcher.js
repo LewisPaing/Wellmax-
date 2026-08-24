@@ -6,7 +6,7 @@
   var dictionaries = {
     zh: {
       'Skip to content': '跳至主要内容', 'Menu': '菜单', 'Home': '首页', 'About': '关于我们', 'Services': '服务', 'Work': '作品', 'Insights': '洞察', 'Client portal': '客户门户', 'Start a project': '开始项目', 'Language': '语言', 'Display and language preferences': '显示与语言偏好', 'Switch to light mode': '切换到浅色模式', 'Switch to dark mode': '切换到深色模式',
-      'Creative advertising & digital marketing agency in Yangon, Myanmar': '缅甸仰光创意广告与数字营销机构', 'We make brands': '我们让品牌', 'impossible to ignore.': '令人无法忽视。',
+      'Creative advertising & digital marketing agency across Southeast Asia': '服务东南亚的创意广告与数字营销机构', 'We make brands': '我们让品牌', 'impossible to ignore.': '令人无法忽视。',
       'Based in Yangon, we create brand strategy, visual identity, campaigns, social media, content and websites for ambitious businesses in Myanmar and beyond.': '我们立足仰光，为缅甸及海外有抱负的企业打造品牌战略、视觉识别、营销活动、社交媒体、内容与网站。',
       'Explore our work': '浏览我们的作品', 'What we do': '我们的服务', 'Selected services': '精选服务', 'Brand identity': '品牌识别', 'Campaigns': '营销活动', 'Digital': '数字营销', 'Content': '内容创作',
       'Brand strategy': '品牌战略', 'Creative design': '创意设计', 'Digital experiences': '数字体验', 'WellMax in motion': 'WellMax 正在前进', 'Growing together': '共同成长', 'Clients & users': '客户与用户', 'Creative staff': '创意团队', 'Projects delivered': '已交付项目', 'Selected collaborations': '精选合作品牌',
@@ -24,7 +24,7 @@
     },
     th: {
       'Skip to content': 'ข้ามไปยังเนื้อหา', 'Menu': 'เมนู', 'Home': 'หน้าแรก', 'About': 'เกี่ยวกับเรา', 'Services': 'บริการ', 'Work': 'ผลงาน', 'Insights': 'บทความ', 'Client portal': 'พอร์ทัลลูกค้า', 'Start a project': 'เริ่มโปรเจกต์', 'Language': 'ภาษา', 'Display and language preferences': 'การแสดงผลและภาษา', 'Switch to light mode': 'เปลี่ยนเป็นโหมดสว่าง', 'Switch to dark mode': 'เปลี่ยนเป็นโหมดมืด',
-      'Creative advertising & digital marketing agency in Yangon, Myanmar': 'เอเจนซีโฆษณาสร้างสรรค์และการตลาดดิจิทัลในย่างกุ้ง เมียนมา', 'We make brands': 'เราสร้างแบรนด์ให้', 'impossible to ignore.': 'โดดเด่นจนมองข้ามไม่ได้',
+      'Creative advertising & digital marketing agency across Southeast Asia': 'เอเจนซีโฆษณาสร้างสรรค์และการตลาดดิจิทัลทั่วเอเชียตะวันออกเฉียงใต้', 'We make brands': 'เราสร้างแบรนด์ให้', 'impossible to ignore.': 'โดดเด่นจนมองข้ามไม่ได้',
       'Based in Yangon, we create brand strategy, visual identity, campaigns, social media, content and websites for ambitious businesses in Myanmar and beyond.': 'จากย่างกุ้ง เราสร้างกลยุทธ์แบรนด์ อัตลักษณ์ แคมเปญ โซเชียลมีเดีย คอนเทนต์ และเว็บไซต์ให้ธุรกิจที่มุ่งเติบโตในเมียนมาและต่างประเทศ',
       'Explore our work': 'ชมผลงานของเรา', 'What we do': 'บริการของเรา', 'Selected services': 'บริการเด่น', 'Brand identity': 'อัตลักษณ์แบรนด์', 'Campaigns': 'แคมเปญ', 'Digital': 'ดิจิทัล', 'Content': 'คอนเทนต์',
       'Brand strategy': 'กลยุทธ์แบรนด์', 'Creative design': 'งานออกแบบสร้างสรรค์', 'Digital experiences': 'ประสบการณ์ดิจิทัล', 'WellMax in motion': 'WellMax กำลังก้าวไป', 'Growing together': 'เติบโตไปด้วยกัน', 'Clients & users': 'ลูกค้าและผู้ใช้', 'Creative staff': 'ทีมครีเอทีฟ', 'Projects delivered': 'โปรเจกต์ที่ส่งมอบ', 'Selected collaborations': 'แบรนด์ที่ร่วมงาน',
@@ -42,7 +42,7 @@
     },
     my: {
       'Skip to content': 'အဓိကအကြောင်းအရာသို့ သွားရန်', 'Menu': 'မီနူး', 'Home': 'ပင်မစာမျက်နှာ', 'About': 'ကျွန်ုပ်တို့အကြောင်း', 'Services': 'ဝန်ဆောင်မှုများ', 'Work': 'လက်ရာများ', 'Insights': 'အတွေးအမြင်များ', 'Client portal': 'ဖောက်သည်ပေါ်တယ်', 'Start a project': 'ပရောဂျက်စတင်ရန်', 'Language': 'ဘာသာစကား', 'Display and language preferences': 'မြင်ကွင်းနှင့် ဘာသာစကားရွေးချယ်မှု', 'Switch to light mode': 'အလင်းမုဒ်သို့ ပြောင်းရန်', 'Switch to dark mode': 'အမှောင်မုဒ်သို့ ပြောင်းရန်',
-      'Creative advertising & digital marketing agency in Yangon, Myanmar': 'မြန်မာနိုင်ငံ ရန်ကုန်မြို့ရှိ ဖန်တီးမှုကြော်ငြာနှင့် ဒစ်ဂျစ်တယ်မားကတ်တင်း အေဂျင်စီ', 'We make brands': 'အမှတ်တံဆိပ်များကို', 'impossible to ignore.': 'လျစ်လျူရှုမရအောင် ဖန်တီးပေးပါသည်။',
+      'Creative advertising & digital marketing agency across Southeast Asia': 'အရှေ့တောင်အာရှတစ်ဝှမ်း ဝန်ဆောင်မှုပေးသော ဖန်တီးမှုကြော်ငြာနှင့် ဒစ်ဂျစ်တယ်မားကတ်တင်း အေဂျင်စီ', 'We make brands': 'အမှတ်တံဆိပ်များကို', 'impossible to ignore.': 'လျစ်လျူရှုမရအောင် ဖန်တီးပေးပါသည်။',
       'Based in Yangon, we create brand strategy, visual identity, campaigns, social media, content and websites for ambitious businesses in Myanmar and beyond.': 'ရန်ကုန်အခြေစိုက် WellMax သည် မြန်မာနိုင်ငံနှင့် နိုင်ငံတကာရှိ တိုးတက်လိုသော လုပ်ငန်းများအတွက် အမှတ်တံဆိပ်မဟာဗျူဟာ၊ ပုံရိပ်၊ ကမ်ပိန်း၊ ဆိုရှယ်မီဒီယာ၊ အကြောင်းအရာနှင့် ဝဘ်ဆိုဒ်များကို ဖန်တီးပေးပါသည်။',
       'Explore our work': 'ကျွန်ုပ်တို့၏လက်ရာများ ကြည့်ရန်', 'What we do': 'ကျွန်ုပ်တို့၏ဝန်ဆောင်မှု', 'Selected services': 'ရွေးချယ်ထားသော ဝန်ဆောင်မှုများ', 'Brand identity': 'အမှတ်တံဆိပ်ပုံရိပ်', 'Campaigns': 'ကမ်ပိန်းများ', 'Digital': 'ဒစ်ဂျစ်တယ်', 'Content': 'အကြောင်းအရာ',
       'Brand strategy': 'အမှတ်တံဆိပ်မဟာဗျူဟာ', 'Creative design': 'ဖန်တီးမှုဒီဇိုင်း', 'Digital experiences': 'ဒစ်ဂျစ်တယ်အတွေ့အကြုံ', 'WellMax in motion': 'WellMax ရှေ့ဆက်နေသည်', 'Growing together': 'အတူတကွ တိုးတက်မည်', 'Clients & users': 'ဖောက်သည်နှင့် အသုံးပြုသူများ', 'Creative staff': 'ဖန်တီးမှုအဖွဲ့', 'Projects delivered': 'ပြီးစီးပရောဂျက်များ', 'Selected collaborations': 'ရွေးချယ်ထားသော ပူးပေါင်းမှုများ',
